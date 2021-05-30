@@ -32,13 +32,17 @@ h6 {
 	font-weight: 700;
 }
 
+.container {
+	max-width: 70%;
+}
+
 .bg {
 	margin: 0;
 	padding: 0;
 	left: 0;
 	right: 0;
 	background-color: $lightPink;
-	height: 85vh;
+	height: 75vh;
 	width: 100vw;
 	position: absolute;
 	z-index: -999;
@@ -49,6 +53,7 @@ h6 {
 	text-decoration: none;
 	font-weight: 500;
 	border-radius: 8px;
+	display: block;
 	&--outline {
 		border: 2px solid $lightPink;
 		background-color: white;
@@ -161,6 +166,10 @@ h6 {
 			box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 20px;
 		}
 	}
+	&__footer {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .c-img {
@@ -215,5 +224,48 @@ h6 {
 		img {
 			transform: scale(1.25);
 		}
+	}
+}
+
+.c-intro {
+	background-color: white;
+	padding: 4rem 8rem;
+	border-radius: 12px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	margin-bottom: 10rem;
+	&__about {
+		max-width: 40%;
+		h2 {
+			color: $lightPink;
+		}
+	}
+	&__btn {
+		display: block;
+	}
+}
+
+.c-speakers {
+	background: $lightPink;
+	padding: 5rem 0;
+	margin: 0 auto;
+	margin-bottom: 10rem;
+}
+
+.c-tickets {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	max-width: 70%;
+	margin: 0 auto;
+	h2 {
+		color: $lightPink;
+	}
+	> div {	
+		> div {
+			margin: 0 auto;
+		}
+	}
+	&__column {
+		border: 2px solid $lightPink;
+		border-radius: 12px;
 	}
 }
