@@ -42,7 +42,6 @@ h6 {
 	left: 0;
 	right: 0;
 	background-color: $lightPink;
-	height: 75vh;
 	width: 100vw;
 	position: absolute;
 	z-index: -999;
@@ -259,7 +258,7 @@ h6 {
 	h2 {
 		color: $lightPink;
 	}
-	> div {	
+	> div {
 		> div {
 			margin: 0 auto;
 		}
@@ -267,5 +266,16 @@ h6 {
 	&__column {
 		border: 2px solid $lightPink;
 		border-radius: 12px;
+	}
+}
+
+.c-title {
+	border-radius: 12px;
+	display: flex;
+	&--white {
+		background-color: white;
+		h2 {
+			color: $lightPink;
+		}
 	}
 }

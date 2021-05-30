@@ -3,7 +3,7 @@
 <?php include "src/helper/header.php" ?>
 
 <body>
-	<div class="bg"></div>
+	<div class="bg" style="height: 75vh"></div>
 
 	<div class="container">
 		<div class="row py-4">
