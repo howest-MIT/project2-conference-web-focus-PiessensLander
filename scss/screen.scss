@@ -279,3 +279,41 @@ h6 {
 		}
 	}
 }
+
+.c-price {
+	background-color: white;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	&__cat {
+		border: 2px solid $lightPink;
+		border-radius: 12px;
+		p {
+			color: $lightPink;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+	&__caption {
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.25) !important;
+	}
+	&__prices {
+		p {
+			text-transform: capitalize;
+			color: black;
+		}
+		h3 {
+			color: $lightPink;
+		}
+		&--regular {
+			opacity: 0.5;
+		}
+	}
+}
+
+footer {
+	background-color: $lightPink;
+	padding-top: 10rem;
+	padding-bottom: 3rem;
+	margin-top: -7rem;
+}
