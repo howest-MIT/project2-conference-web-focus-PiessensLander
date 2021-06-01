@@ -33,6 +33,11 @@ h6 {
 	font-weight: 700;
 }
 
+footer {
+	background-color: $lightPink;
+	padding: 3rem;
+}
+
 .container {
 	max-width: 75%;
 }
@@ -208,7 +213,7 @@ h6 {
 	}
 	&__item {
 		padding: 1rem;
-		background: #e6e6e6;
+		background: #f5f3f3;
 		border-radius: 12px;
 		transition: 0.3s all;
 		text-decoration: none;
@@ -522,7 +527,36 @@ h6 {
 	}
 }
 
-footer {
-	background-color: $lightPink;
-	padding: 3rem;
+.c-user {
+	&__img {
+		width: 6rem;
+		height: auto;
+		border-radius: 100px;
+	}
+	p {
+		font-size: 1.5rem;
+	}
+}
+
+.c-stat {
+	background: #f5f3f3;
+	border-radius: 12px;
+	font-weight: 500;
+	&__icon {
+		font-size: 2rem;
+		background-color: $lightPink;
+		width: 64px;
+		height: 64px;
+		color: white;
+		border-radius: 10px;
+	}
+	a {
+		color: $darkPink;
+	}
+}
+
+.c-graph {
+	background-color: #f5f3f3;
+	border-radius: 12px;
+	width: 100%;
 }

@@ -87,6 +87,7 @@
 								<img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
 							</div>
 							<div class="c-card__description mb-3 d-flex">
+								<!-- Langere tekst: functie in PHP, x-aantal karakters laten zien. Als karakters meer zijn: aanvullen met '...' -->
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus esse ipsam! Veniam ea reprehenderit amet animi magni fugit odio placeat sapiente facilis quam, autem reiciendis itaque culpa aliquam tempora.</^p>
 							</div>
 							<div class="c-card__footer d-flex flex-wrap justify-content-between">
