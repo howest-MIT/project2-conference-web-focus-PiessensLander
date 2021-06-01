@@ -82,6 +82,15 @@ footer {
 			background-color: $darkPink;
 		}
 	}
+	&--warning {
+		border: 2px solid #c54848;
+		background-color: white;
+		color: #c54848;
+		transition: all 0.3s;
+		&:hover {
+			color: #c54848;
+		}
+	}
 	&:hover {
 		transition: all 0.3s;
 		transform: translate(0px, -3px);

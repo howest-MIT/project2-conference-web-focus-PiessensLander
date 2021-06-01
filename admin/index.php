@@ -17,23 +17,24 @@
 </head>
 
 <body>
+    <div class="bg" style="height: 35vh"></div>
     <div class="container">
         <div class="row py-4 mb-5">
             <div class="c-nav d-flex justify-content-between align-items-center">
                 <img src="../img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
                 <ul class="c-nav__items d-flex justify-content-center">
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="../index.php" class="active">Home</a></li>
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="../schedule.php">Program</a></li>
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="#">Partners</a></li>
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="#">Contact</a></li>
+                    <li class="c-nav__link c-nav__link px-3"><a href="../index.php">Home</a></li>
+                    <li class="c-nav__link c-nav__link px-3"><a href="../schedule.php">Program</a></li>
+                    <li class="c-nav__link c-nav__link px-3"><a href="#">Partners</a></li>
+                    <li class="c-nav__link c-nav__link px-3"><a href="#">Contact</a></li>
                 </ul>
-                <a href="../bestel.php" class="c-btn c-btn--pink py-2 px-5 w-auto">Buy tickets</a>
+                <a href="../bestel.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Buy tickets</a>
             </div>
         </div>
         <div class="row mb-5">
             <div class="c-user d-flex align-items-center">
                 <img src="../img/pf.jpg" alt="Profile picture" class="c-user__img me-3">
-                <p class="text-pink">Welcome back, <b>Lander Piessens</b></p>
+                <p class="text-white">Welcome back, <b>Lander Piessens</b></p>
             </div>
         </div>
         <div class="row mb-5">
@@ -106,7 +107,7 @@
                             <td>01/06/2021</td>
                             <td>Student</td>
                             <td>
-                                <a href="#" class="c-btn c-btn--pink py-2 px-5">Details</a>
+                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
                             </td>
                         </tr>
                         <tr>
@@ -115,7 +116,7 @@
                             <td>01/06/2021</td>
                             <td>Student</td>
                             <td>
-                                <a href="#" class="c-btn c-btn--pink py-2 px-5">Details</a>
+                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
                             </td>
                         </tr>
                         <tr>
@@ -124,7 +125,7 @@
                             <td>01/06/2021</td>
                             <td>Student</td>
                             <td>
-                                <a href="#" class="c-btn c-btn--pink py-2 px-5">Details</a>
+                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
                             </td>
                         </tr>
                         <tr>
@@ -133,7 +134,7 @@
                             <td>01/06/2021</td>
                             <td>Student</td>
                             <td>
-                                <a href="#" class="c-btn c-btn--pink py-2 px-5">Details</a>
+                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
                             </td>
                         </tr>
                         <tr>
@@ -142,13 +143,14 @@
                             <td>01/06/2021</td>
                             <td>Student</td>
                             <td>
-                                <a href="#" class="c-btn c-btn--pink py-2 px-5">Details</a>
+                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="c-table__all d-flex justify-content-center">
-                    <a href="#" class="c-btn c-btn--pink py-2 px-5 w-auto">View all orders</a>
+                    <a href="#" class="c-btn c-btn--pink py-2 px-5 w-auto" data-bs-toggle="modal" data-bs-target="#warningModal">View all orders</a>
+
                 </div>
             </div>
             <div class="col-sm-12 col-lg-5">
@@ -158,10 +160,11 @@
                         <p>tickets sold</p>
                     </div>
                 </canvas>
-
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
     <script>
         var ctx = document.getElementById('sales');
