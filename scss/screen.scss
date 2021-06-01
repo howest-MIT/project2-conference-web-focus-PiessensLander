@@ -4,6 +4,7 @@
 
 $lightPink: #c54893;
 $darkPink: #95005b;
+$lightGray: #cccccc;
 
 body {
 	overflow-x: hidden;
@@ -33,7 +34,7 @@ h6 {
 }
 
 .container {
-	max-width: 70%;
+	max-width: 75%;
 }
 
 .bg {
@@ -47,12 +48,17 @@ h6 {
 	z-index: -999;
 }
 
+.text-pink {
+	color: $lightPink;
+}
+
 .c-btn {
 	width: 100%;
 	text-decoration: none;
 	font-weight: 500;
 	border-radius: 8px;
 	display: block;
+	transition: all 0.3s;
 	&--outline {
 		border: 2px solid $lightPink;
 		background-color: white;
@@ -68,12 +74,29 @@ h6 {
 		transition: all 0.3s;
 		&:hover {
 			color: white;
+			background-color: $darkPink;
 		}
 	}
 	&:hover {
 		transition: all 0.3s;
 		transform: translate(0px, -3px);
 		cursor: pointer;
+	}
+	&--facebook {
+		background: #3b5998;
+		color: white;
+		&:hover {
+			background: #3b5998;
+			color: white;
+		}
+	}
+	&--twitter {
+		background: #1da1f2;
+		color: white;
+		&:hover {
+			background: #1da1f2;
+			color: white;
+		}
 	}
 }
 
@@ -82,7 +105,8 @@ h6 {
 		max-width: 20%;
 	}
 	&__items {
-		width: 50%;
+		margin: 0;
+		padding: 0;
 	}
 	&__link {
 		list-style-type: none;
@@ -92,12 +116,70 @@ h6 {
 			color: black;
 			font-weight: 500;
 			transition: all 0.3s;
+			position: relative;
 			&:hover {
 				color: white;
 				transition: all 0.3s;
+				&::before {
+					visibility: visible;
+					transform: scaleX(1);
+				}
+				&::after {
+					width: 60%;
+					left: 50%;
+					transform: translate(-50%, 50%);
+				}
 			}
 			&.active {
 				color: white;
+			}
+			&::after {
+				background: none repeat scroll 0 0 transparent;
+				bottom: -5px;
+				content: '';
+				display: block;
+				height: 2px;
+				left: 50%;
+				transform: translate(-50%, 50%);
+				position: absolute;
+				background: white;
+				transition: width 0.3s ease 0s, left 0.3s ease 0s;
+				width: 0;
+			}
+		}
+		&--light {
+			a {
+				transition: all 0.3s;
+				position: relative;
+				&:hover {
+					color: $darkPink;
+					transition: all 0.3s;
+					&::before {
+						visibility: visible;
+						transform: scaleX(1);
+					}
+					&::after {
+						width: 60%;
+						left: 50%;
+						transform: translate(-50%, 50%);
+					}
+				}
+				&.active {
+					color: $lightPink;
+				}
+				&::after {
+					background: none repeat scroll 0 0 transparent;
+					bottom: -5px;
+					content: '';
+					display: block;
+					height: 2px;
+					left: 50%;
+					transform: translate(-50%, 50%);
+					position: absolute;
+					background: $darkPink;
+					transition: width 0.3s ease 0s, left 0.3s ease 0s;
+					width: 0;
+				}
 			}
 		}
 	}
@@ -285,12 +367,21 @@ h6 {
 			color: $lightPink;
 		}
 	}
+	&--pink {
+		background-color: $lightPink;
+		h2 {
+			color: white;
+		}
+	}
 }
 
 .c-price {
 	background-color: white;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 	border-radius: 12px;
+	h2 {
+		color: $lightPink;
+	}
 	&__cat {
 		border: 2px solid $lightPink;
 		border-radius: 12px;
@@ -318,9 +409,120 @@ h6 {
 	}
 }
 
+.c-pagination {
+	border: 2px solid rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	&__pages {
+		a {
+			color: $lightPink;
+			text-decoration: none;
+			font-weight: 500;
+		}
+		div {
+			width: 32px;
+			height: 32px;
+			border: 1px solid $lightPink;
+		}
+		&--active {
+			background: $lightPink;
+			a {
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+	&__firstpage {
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+	&__next {
+		border-top-right-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+}
+
+.c-badge {
+	background-color: $lightPink;
+	border-radius: 50px;
+	padding: 0.25rem 1.5rem;
+	color: white;
+	display: inline-block;
+}
+
+.bg-pink {
+	background-color: $lightPink;
+}
+
+.c-session {
+	&__desc {
+		max-width: 70%;
+	}
+}
+
+.c-booking {
+	button {
+		border: none;
+	}
+	&__step {
+		font-weight: 600;
+	}
+	&__input {
+		margin-right: 1rem;
+		&--text {
+			height: 40px;
+			padding-left: 0.5rem;
+			border: 1px solid $lightGray;
+			border-radius: 8px;
+			transition: all 0.3s;
+			&:focus {
+				outline: none;
+				border: 2px solid $lightPink;
+				transition: all 0.3s;
+			}
+		}
+		&:invalid {
+			border: 2px solid red;
+		}
+		&--amount {
+			width: 40%;
+			height: 100%;
+			padding: 0.5rem;
+			border: 1px solid $lightGray;
+			border-radius: 8px;
+			transition: all 0.3s;
+			margin: 0 auto;
+			appearance: textfield;
+			&:focus {
+				outline: none;
+				border: 2px solid $lightPink;
+				transition: all 0.3s;
+			}
+		}
+	}
+	&__select {
+		height: 40px;
+		padding-left: 0.5rem;
+		border: 2px solid $lightGray;
+		border-radius: 8px;
+		transition: all 0.3s;
+	}
+	&__type {
+		border: 1px solid $lightGray;
+		border-radius: 12px;
+	}
+}
+
+.c-type {
+	&__price {
+		text-align: right;
+		p {
+			font-size: 0.75rem;
+			color: $lightGray;
+		}
+	}
+}
+
 footer {
 	background-color: $lightPink;
-	padding-top: 10rem;
-	padding-bottom: 3rem;
-	margin-top: -7rem;
+	padding: 3rem;
 }

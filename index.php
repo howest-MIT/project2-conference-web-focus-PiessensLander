@@ -3,19 +3,19 @@
 <?php include "src/helper/header.php" ?>
 
 <body>
-	<div class="bg" style="height: 95vh"></div>
+	<div class="bg" style="height: 80vh"></div>
 
 	<div class="container">
 		<div class="row py-4">
 			<div class="c-nav d-flex justify-content-between align-items-center">
 				<img src="img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
 				<ul class="c-nav__items d-flex justify-content-center">
-					<li class="c-nav__link px-3"><a href="#" class="active">Home</a></li>
-					<li class="c-nav__link px-3"><a href="#">Program</a></li>
+					<li class="c-nav__link px-3"><a href="index.php" class="active">Home</a></li>
+					<li class="c-nav__link px-3"><a href="schedule.php">Program</a></li>
 					<li class="c-nav__link px-3"><a href="#">Partners</a></li>
 					<li class="c-nav__link px-3"><a href="#">Contact</a></li>
 				</ul>
-				<a href="#" class="c-nav__cta c-btn c-btn--outline py-2 px-5">Buy tickets</a>
+				<a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5">Buy tickets</a>
 			</div>
 		</div>
 		<div class="row c-header">
@@ -58,7 +58,8 @@
 				</div>
 				<div class="c-intro__about d-flex flex-column align-items-center justify-content-center">
 					<h2 class="mb-4">About Multi-Mania</h2>
-					<p class="text-center mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
+					<p class="text-center mb-4">Multi-Mania is for UX researchers, experience designers, interface designers, product owners, service innovators, software developers and business leaders that are defining the way we research, design, and deliver new products and services using operations at scale.
+						The conference is now in its 3rd year and has established itself as the preeminent global conference for professionals leading and scaling research, design, development and innovation using ‘operations principles’ in the digital product-service continuum.</p>
 					<a href="#" class="c-intro__btn c-btn c-btn--pink py-2 px-5 w-auto">Buy tickets</a>
 				</div>
 				<div class="c-intro__speakers d-flex flex-column align-items-center">
@@ -77,7 +78,7 @@
 			<div class="row justify-content-center">
 				<h2 class="text-white text-center mb-4">Some of our speakers</h2>
 				<div class="row d-flex mb-5 justify-content-center">
-					<div class="col-sm-6 col-md-4 col-xl-3 mt-3 align-items-stretch">
+					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3 align-items-stretch">
 						<div class="c-card p-4">
 							<div class="c-card__header mb-3">
 								<h3>Aral Balkan</h3>
@@ -90,15 +91,15 @@
 							</div>
 							<div class="c-card__footer d-flex flex-wrap justify-content-between">
 								<a class="c-btn c-btn--outline py-2 px-5 w-auto">
-									Like
+									<i class="far fa-heart me-2"></i>Like
 								</a>
-								<a class="c-btn c-btn--pink py-2 px-5 w-auto">
+								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
 									More info
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-xl-3 mt-3">
+					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3">
 						<div class="c-card p-4">
 							<div class="c-card__header mb-3">
 								<h3>Aral Balkan</h3>
@@ -111,15 +112,15 @@
 							</div>
 							<div class="c-card__footer d-flex flex-wrap justify-content-between">
 								<a class="c-btn c-btn--outline py-2 px-5 w-auto">
-									Like
+									<i class="far fa-heart me-2"></i>Like
 								</a>
-								<a class="c-btn c-btn--pink py-2 px-5 w-auto">
+								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
 									More info
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-xl-3 mt-3">
+					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3">
 						<div class="c-card p-4">
 							<div class="c-card__header mb-3">
 								<h3>Aral Balkan</h3>
@@ -132,9 +133,9 @@
 							</div>
 							<div class="c-card__footer d-flex flex-wrap justify-content-between">
 								<a class="c-btn c-btn--outline py-2 px-5 w-auto">
-									Like
+									<i class="far fa-heart me-2"></i>Like
 								</a>
-								<a class="c-btn c-btn--pink py-2 px-5 w-auto">
+								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
 									More info
 								</a>
 							</div>
@@ -216,10 +217,12 @@
 			</div>
 		</div>
 	</div>
-	<footer>
+	<footer style="padding-top: 10rem;margin-top: -7rem;">
 		<div class="container">
 			<div class="row">
 				<p class="text-center text-white">&copy; Multi-Mania, 2021</p>
+				<br>
+				<p class="text-center text-white">Images copyright: Frederik Jaques</p>
 			</div>
 		</div>
 	</footer>
