@@ -12,7 +12,7 @@
         <ul class="c-nav__items d-flex justify-content-center">
           <li class="c-nav__link px-3"><a href="index.php">Home</a></li>
           <li class="c-nav__link px-3"><a href="schedule.php" class="active">Program</a></li>
-          <li class="c-nav__link px-3"><a href="#">Partners</a></li>
+          <li class="c-nav__link px-3"><a href="partners.php">Partners</a></li>
           <li class="c-nav__link px-3"><a href="#">Contact</a></li>
         </ul>
         <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5">Buy tickets</a>
@@ -55,10 +55,10 @@
       <div class="col-sm-6 col-md-4 col-xl-3 mt-3">
         <div class="c-card p-4">
           <div class="c-card__header mb-3">
-            <h3>Aral Balkan</h3>
+            <h3>Ziggy de Block</h3>
           </div>
           <div class="c-card__image mb-3">
-            <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
+            <img src="img/ziggy.jpg" alt="Ziggy" style="object-fit: cover; height: 300px; width: 100%">
           </div>
           <div class="c-card__description mb-3">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus odio eligendi velit unde eos praesentium, illo harum placeat eaque voluptatem.</p>
@@ -76,10 +76,10 @@
       <div class="col-sm-6 col-md-4 col-xl-3 mt-3">
         <div class="c-card p-4">
           <div class="c-card__header mb-3">
-            <h3>Aral Balkan</h3>
+            <h3>Isbel Dessein</h3>
           </div>
           <div class="c-card__image mb-3">
-            <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
+            <img src="img/isbel.jpg" alt="Isbel" style="object-fit: cover; height: 300px; width: 100%">
           </div>
           <div class="c-card__description mb-3">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum laudantium nihil possimus quo consequuntur ipsam molestias iure libero placeat veritatis. Neque autem unde veritatis tempora reprehenderit eveniet nesciunt fuga maxime? Fugit voluptatum, incidunt modi culpa maxime amet numquam assumenda odio sunt illo asperiores facere aut cupiditate, a quos quaerat dolor!</p>

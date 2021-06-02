@@ -12,7 +12,7 @@
                 <ul class="c-nav__items d-flex justify-content-center">
                     <li class="c-nav__link px-3"><a href="index.php">Home</a></li>
                     <li class="c-nav__link px-3"><a href="schedule.php" class="active">Program</a></li>
-                    <li class="c-nav__link px-3"><a href="#">Partners</a></li>
+                    <li class="c-nav__link px-3"><a href="partners.php">Partners</a></li>
                     <li class="c-nav__link px-3"><a href="#">Contact</a></li>
                 </ul>
                 <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5">Buy tickets</a>
