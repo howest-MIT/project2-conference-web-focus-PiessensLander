@@ -28,7 +28,7 @@
                     <li class="c-nav__link c-nav__link px-3"><a href="../index.php">Home</a></li>
                     <li class="c-nav__link c-nav__link px-3"><a href="../schedule.php">Program</a></li>
                     <li class="c-nav__link c-nav__link px-3"><a href="../partners.php">Partners</a></li>
-                    <li class="c-nav__link c-nav__link px-3"><a href="#">Contact</a></li>
+                    <li class="c-nav__link c-nav__link px-3"><a href="../contact.php">Contact</a></li>
                 </ul>
                 <a href="../bestel.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Buy tickets</a>
             </div>
