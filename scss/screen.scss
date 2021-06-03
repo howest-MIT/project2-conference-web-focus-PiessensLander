@@ -577,3 +577,36 @@ footer {
 		}
 	}
 }
+
+.c-contact {
+	button {
+		border: none;
+	}
+	&__input {
+		margin-right: 1rem;
+		&--text {
+			height: 40px;
+			padding-left: 0.5rem;
+			border: 1px solid $lightGray;
+			border-radius: 8px;
+			transition: all 0.3s;
+			&:focus {
+				outline: none;
+				border: 2px solid $lightPink;
+				transition: all 0.3s;
+			}
+		}
+		&--textarea {
+			padding: 0.5rem;
+			border-radius: 8px;
+			min-height: 200px;
+		}
+		&:invalid {
+			border: 2px solid red;
+		}
+	}
+	&__map {
+		width: 100%;
+		height: 100%;
+	}
+}
