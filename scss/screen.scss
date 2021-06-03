@@ -1,2 +1,613 @@
 /* Plaats hier je design system SASS van de vorige opdracht en nieuwe Sass code */
 /* activeer de SASS plugin zodat de correcte SCS wordt aangemaakt */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$lightPink: #c54893;
+$darkPink: #95005b;
+$lightGray: #cccccc;
+
+body {
+	overflow-x: hidden;
+	min-height: 100vh;
+}
+
+* {
+	box-sizing: border-box !important;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	font-family: 'Lexend', sans-serif;
+	font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+footer {
+	background-color: $lightPink;
+	padding: 3rem;
+}
+
+.container {
+	max-width: 75%;
+}
+
+.bg {
+	margin: 0;
+	padding: 0;
+	left: 0;
+	right: 0;
+	background-color: $lightPink;
+	width: 100vw;
+	position: absolute;
+	z-index: -999;
+}
+
+.text-pink {
+	color: $lightPink;
+}
+
+.c-btn {
+	width: 100%;
+	text-decoration: none;
+	font-weight: 500;
+	border-radius: 8px;
+	display: block;
+	transition: all 0.3s;
+	&--outline {
+		border: 2px solid $lightPink;
+		background-color: white;
+		color: $lightPink;
+		transition: all 0.3s;
+		&:hover {
+			color: $lightPink;
+		}
+	}
+	&--pink {
+		background-color: $lightPink;
+		color: white;
+		transition: all 0.3s;
+		&:hover {
+			color: white;
+			background-color: $darkPink;
+		}
+	}
+	&--warning {
+		border: 2px solid #c54848;
+		background-color: white;
+		color: #c54848;
+		transition: all 0.3s;
+		&:hover {
+			color: #c54848;
+		}
+	}
+	&:hover {
+		transition: all 0.3s;
+		transform: translate(0px, -3px);
+		cursor: pointer;
+	}
+	&--facebook {
+		background: #3b5998;
+		color: white;
+		&:hover {
+			background: #3b5998;
+			color: white;
+		}
+	}
+	&--twitter {
+		background: #1da1f2;
+		color: white;
+		&:hover {
+			background: #1da1f2;
+			color: white;
+		}
+	}
+}
+
+.c-nav {
+	&__logo {
+		max-width: 20%;
+	}
+	&__items {
+		margin: 0;
+		padding: 0;
+	}
+	&__link {
+		list-style-type: none;
+		display: inline-block;
+		a {
+			text-decoration: none;
+			color: black;
+			font-weight: 500;
+			transition: all 0.3s;
+			position: relative;
+			&:hover {
+				color: white;
+				transition: all 0.3s;
+				&::before {
+					visibility: visible;
+					transform: scaleX(1);
+				}
+				&::after {
+					width: 60%;
+					left: 50%;
+					transform: translate(-50%, 50%);
+				}
+			}
+			&.active {
+				color: white;
+			}
+			&::after {
+				background: none repeat scroll 0 0 transparent;
+				bottom: -5px;
+				content: '';
+				display: block;
+				height: 2px;
+				left: 50%;
+				transform: translate(-50%, 50%);
+				position: absolute;
+				background: white;
+				transition: width 0.3s ease 0s, left 0.3s ease 0s;
+				width: 0;
+			}
+		}
+		&--light {
+			a {
+				transition: all 0.3s;
+				position: relative;
+				&:hover {
+					color: $darkPink;
+					transition: all 0.3s;
+					&::before {
+						visibility: visible;
+						transform: scaleX(1);
+					}
+					&::after {
+						width: 60%;
+						left: 50%;
+						transform: translate(-50%, 50%);
+					}
+				}
+				&.active {
+					color: $lightPink;
+				}
+				&::after {
+					background: none repeat scroll 0 0 transparent;
+					bottom: -5px;
+					content: '';
+					display: block;
+					height: 2px;
+					left: 50%;
+					transform: translate(-50%, 50%);
+					position: absolute;
+					background: $darkPink;
+					transition: width 0.3s ease 0s, left 0.3s ease 0s;
+					width: 0;
+				}
+			}
+		}
+	}
+	&__cta {
+		display: block;
+		width: auto;
+	}
+}
+
+.c-header {
+	padding-top: 4rem;
+}
+
+.c-schedule {
+	&__time {
+		font-weight: 300;
+		color: black;
+	}
+	&__speaker {
+		font-weight: 700;
+		color: $darkPink;
+	}
+	&__topic {
+		font-weight: 500;
+		color: black;
+	}
+	&__item {
+		padding: 1rem;
+		background: #f5f3f3;
+		border-radius: 12px;
+		transition: 0.3s all;
+		text-decoration: none;
+		&:hover {
+			background-color: $darkPink;
+			color: white;
+			transition: 0.3s all;
+			.c-schedule {
+				&__time {
+					color: white;
+				}
+				&__speaker {
+					color: white;
+				}
+				&__topic {
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+.c-card {
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 20px;
+	&__header {
+		color: $lightPink;
+	}
+	&__image {
+		img {
+			max-width: 100%;
+			border-radius: 12px;
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 20px;
+		}
+	}
+	&__footer {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.c-img {
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	transition: all 0.3s;
+	&:hover {
+		transform: scale(1.025);
+		transition: all 0.3s;
+	}
+}
+
+.c-carousel {
+	.owl-stage {
+		padding: 3rem 0;
+	}
+	.owl-nav {
+		width: 30%;
+		margin: 0 auto;
+		display: flex;
+		position: absolute;
+		z-index: 10;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		justify-content: space-between;
+
+		button {
+			span {
+				font-size: 5rem;
+				color: white;
+				padding: 0.5rem;
+				border-radius: 100px;
+			}
+		}
+	}
+	.owl-item {
+		&.active {
+			padding: 2rem;
+		}
+	}
+	&__item {
+		padding: 0 2rem;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.center {
+	.c-carousel__item {
+		img {
+			transform: scale(1.25);
+		}
+	}
+}
+
+.c-intro {
+	background-color: white;
+	padding: 4rem 8rem;
+	border-radius: 12px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	margin-bottom: 10rem;
+
+	&__about {
+		max-width: 40%;
+		h2 {
+			color: $lightPink;
+		}
+	}
+	&__btn {
+		display: block;
+	}
+	&__halls,
+	&__speakers {
+		a {
+			color: black;
+		}
+	}
+}
+
+.c-speakers {
+	background: $lightPink;
+	padding: 5rem 0;
+	margin: 0 auto;
+	margin-bottom: 10rem;
+}
+
+.c-tickets {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	max-width: 70%;
+	margin: 0 auto;
+	h2 {
+		color: $lightPink;
+	}
+	> div {
+		> div {
+			margin: 0 auto;
+		}
+	}
+	&__column {
+		border: 2px solid $lightPink;
+		border-radius: 12px;
+	}
+}
+
+.c-title {
+	border-radius: 12px;
+	display: flex;
+	&--white {
+		background-color: white;
+		h2 {
+			color: $lightPink;
+		}
+	}
+	&--pink {
+		background-color: $lightPink;
+		h2 {
+			color: white;
+		}
+	}
+}
+
+.c-price {
+	background-color: white;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	h2 {
+		color: $lightPink;
+	}
+	&__cat {
+		border: 2px solid $lightPink;
+		border-radius: 12px;
+		p {
+			color: $lightPink;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+	&__caption {
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, 0.25) !important;
+	}
+	&__prices {
+		p {
+			text-transform: capitalize;
+			color: black;
+		}
+		h3 {
+			color: $lightPink;
+		}
+		&--regular {
+			opacity: 0.5;
+		}
+	}
+}
+
+.c-pagination {
+	border: 2px solid rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	&__pages {
+		a {
+			color: $lightPink;
+			text-decoration: none;
+			font-weight: 500;
+		}
+		div {
+			width: 32px;
+			height: 32px;
+			border: 1px solid $lightPink;
+		}
+		&--active {
+			background: $lightPink;
+			a {
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+	&__firstpage {
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+	&__next {
+		border-top-right-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+}
+
+.c-badge {
+	background-color: $lightPink;
+	border-radius: 50px;
+	padding: 0.25rem 1.5rem;
+	color: white;
+	display: inline-block;
+}
+
+.bg-pink {
+	background-color: $lightPink;
+}
+
+.c-session {
+	&__desc {
+		max-width: 70%;
+	}
+}
+
+.c-booking {
+	button {
+		border: none;
+	}
+	&__step {
+		font-weight: 600;
+	}
+	&__input {
+		margin-right: 1rem;
+		&--text {
+			height: 40px;
+			padding-left: 0.5rem;
+			border: 1px solid $lightGray;
+			border-radius: 8px;
+			transition: all 0.3s;
+			&:focus {
+				outline: none;
+				border: 2px solid $lightPink;
+				transition: all 0.3s;
+			}
+		}
+		&:invalid {
+			border: 2px solid red;
+		}
+		&--amount {
+			width: 40%;
+			height: 100%;
+			padding: 0.5rem;
+			border: 1px solid $lightGray;
+			border-radius: 8px;
+			transition: all 0.3s;
+			margin: 0 auto;
+			appearance: textfield;
+			&:focus {
+				outline: none;
+				border: 2px solid $lightPink;
+				transition: all 0.3s;
+			}
+		}
+	}
+	&__select {
+		height: 40px;
+		padding-left: 0.5rem;
+		border: 2px solid $lightGray;
+		border-radius: 8px;
+		transition: all 0.3s;
+	}
+	&__type {
+		border: 1px solid $lightGray;
+		border-radius: 12px;
+	}
+}
+
+.c-type {
+	&__price {
+		text-align: right;
+		p {
+			font-size: 0.75rem;
+			color: $lightGray;
+		}
+	}
+}
+
+.c-user {
+	&__img {
+		width: 6rem;
+		height: auto;
+		border-radius: 100px;
+	}
+	p {
+		font-size: 1.5rem;
+	}
+}
+
+.c-stat {
+	background: #f5f3f3;
+	border-radius: 12px;
+	font-weight: 500;
+	&__icon {
+		font-size: 2rem;
+		background-color: $lightPink;
+		width: 64px;
+		height: 64px;
+		color: white;
+		border-radius: 10px;
+	}
+	a {
+		color: $darkPink;
+	}
+}
+
+.c-graph {
+	background-color: #f5f3f3;
+	border-radius: 12px;
+	width: 100%;
+}
+
+.c-sponsors {
+	> div {
+		img {
+			width: 70%;
+		}
+	}
+}
+
+.c-contact {
+	button {
+		border: none;
+	}
+	&__input {
+		margin-right: 1rem;
+		&--text {
+			height: 40px;
+			padding-left: 0.5rem;
+			border: 1px solid $lightGray;
+			border-radius: 8px;
+			transition: all 0.3s;
+			&:focus {
+				outline: none;
+				border: 2px solid $lightPink;
+				transition: all 0.3s;
+			}
+		}
+		&--textarea {
+			padding: 0.5rem;
+			border-radius: 8px;
+			min-height: 200px;
+		}
+		&:invalid {
+			border: 2px solid red;
+		}
+	}
+	&__map {
+		width: 100%;
+		height: 100%;
+	}
+}
