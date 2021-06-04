@@ -12,6 +12,7 @@
                 <ul class="c-nav__items d-flex justify-content-center">
                     <li class="c-nav__link px-3"><a href="index.php">Home</a></li>
                     <li class="c-nav__link px-3"><a href="schedule.php">Program</a></li>
+                    <li class="c-nav__link px-3"><a href="speakers.php">Speakers</a></li>
                     <li class="c-nav__link px-3"><a href="partners.php" class="active">Partners</a></li>
                     <li class="c-nav__link px-3"><a href="contact.php">Contact</a></li>
                 </ul>

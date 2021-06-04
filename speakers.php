@@ -11,7 +11,8 @@
         <img src="img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
         <ul class="c-nav__items d-flex justify-content-center">
           <li class="c-nav__link px-3"><a href="index.php">Home</a></li>
-          <li class="c-nav__link px-3"><a href="schedule.php" class="active">Program</a></li>
+          <li class="c-nav__link px-3"><a href="schedule.php">Program</a></li>
+          <li class="c-nav__link px-3"><a href="speakers.php" class="active">Speakers</a></li>
           <li class="c-nav__link px-3"><a href="partners.php">Partners</a></li>
           <li class="c-nav__link px-3"><a href="contact.php">Contact</a></li>
         </ul>
@@ -26,6 +27,7 @@
           <select name="speaker_filter" id="speaker_filter">
             <option value="most_popular">Most popular</option>
             <option value="alphabetical"> Alphabetical (A-Z)</option>
+            <option value="likes"> Most likes</option>
           </select>
         </div>
       </div>
@@ -55,13 +57,13 @@
       <div class="col-sm-6 col-md-4 col-xl-3 mt-3">
         <div class="c-card p-4">
           <div class="c-card__header mb-3">
-            <h3>Ziggy de Block</h3>
+            <h3>Aral Balkan</h3>
           </div>
           <div class="c-card__image mb-3">
-            <img src="img/ziggy.jpg" alt="Ziggy" style="object-fit: cover; height: 300px; width: 100%">
+            <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
           </div>
           <div class="c-card__description mb-3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus odio eligendi velit unde eos praesentium, illo harum placeat eaque voluptatem.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quod.</p>
           </div>
           <div class="c-card__footer d-flex flex-wrap justify-content-between">
             <a class="c-btn c-btn--outline py-2 px-5 w-auto">
@@ -76,13 +78,13 @@
       <div class="col-sm-6 col-md-4 col-xl-3 mt-3">
         <div class="c-card p-4">
           <div class="c-card__header mb-3">
-            <h3>Isbel Dessein</h3>
+            <h3>Aral Balkan</h3>
           </div>
           <div class="c-card__image mb-3">
-            <img src="img/isbel.jpg" alt="Isbel" style="object-fit: cover; height: 300px; width: 100%">
+            <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
           </div>
           <div class="c-card__description mb-3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum laudantium nihil possimus quo consequuntur ipsam molestias iure libero placeat veritatis. Neque autem unde veritatis tempora reprehenderit eveniet nesciunt fuga maxime? Fugit voluptatum, incidunt modi culpa maxime amet numquam assumenda odio sunt illo asperiores facere aut cupiditate, a quos quaerat dolor!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quas sunt quia magni. Sit ipsam odio neque, nesciunt delectus autem eveniet dolorum cupiditate perspiciatis voluptates sapiente reiciendis iusto! Fugit, facere.</p>
           </div>
           <div class="c-card__footer d-flex flex-wrap justify-content-between">
             <a class="c-btn c-btn--outline py-2 px-5 w-auto">
@@ -235,9 +237,18 @@
     </div>
   </footer>
   </div>
+  <script>
+    function truncateText(selector, maxLength) {
+      var element = document.querySelector(selector),
+        truncated = element.innerText;
 
-
-
+      if (truncated.length > maxLength) {
+        truncated = truncated.substr(0, maxLength) + '...';
+      }
+      return truncated;
+    }
+    document.querySelector('p').innerText = truncateText('p', 20);
+  </script>
 </body>
 
 </html>

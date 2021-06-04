@@ -25,10 +25,11 @@
             <div class="c-nav d-flex justify-content-between align-items-center">
                 <img src="../img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
                 <ul class="c-nav__items d-flex justify-content-center">
-                    <li class="c-nav__link c-nav__link px-3"><a href="../index.php">Home</a></li>
-                    <li class="c-nav__link c-nav__link px-3"><a href="../schedule.php">Program</a></li>
-                    <li class="c-nav__link c-nav__link px-3"><a href="../partners.php">Partners</a></li>
-                    <li class="c-nav__link c-nav__link px-3"><a href="../contact.php">Contact</a></li>
+                    <li class="c-nav__link px-3"><a href="../index.php">Home</a></li>
+                    <li class="c-nav__link px-3"><a href="../schedule.php">Program</a></li>
+                    <li class="c-nav__link px-3"><a href="../speakers.php">Speakers</a></li>
+                    <li class="c-nav__link px-3"><a href="../partners.php">Partners</a></li>
+                    <li class="c-nav__link px-3"><a href="../contact.php">Contact</a></li>
                 </ul>
                 <a href="../bestel.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Buy tickets</a>
             </div>
