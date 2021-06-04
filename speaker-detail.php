@@ -75,6 +75,7 @@
       </div>
     </div>
   </footer>
+  <script src="script/speaker-detail.js"></script>
 </body>
 
 </html>
