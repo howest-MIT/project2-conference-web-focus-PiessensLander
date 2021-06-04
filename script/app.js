@@ -142,9 +142,37 @@ const sessionDetails = function (response) {
     </div>`
 };
 
+const getSpeakers = function (response) {
+    for (let i of response.data) {
+        console.log(i);
+        document.querySelector(".js-speakers").innerHTML += `<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-5 mb-2">
+        <div class="c-card p-4">
+          <div class="c-card__header mb-3">
+            <h3>${i.voornaam} ${i.familienaam}</h3>
+          </div>
+          <div class="c-card__image mb-3">
+            <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
+          </div>
+          <div class="c-card__description mb-3 d-flex">
+            <p>${i.bio.eng}</p>
+          </div>
+          <div class="c-card__footer d-flex flex-wrap justify-content-between">
+            <a class="c-btn c-btn--outline py-2 px-5 w-auto">
+              <i class="far fa-heart me-2"></i>Like
+            </a>
+            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto">
+              More info
+            </a>
+          </div>
+        </div>
+      </div>`
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     console.info('DOM geladen');
     getSpeakerId();
     getSessionId();
     handleData("http://api.laprudence.be/project2/v2/zalen", getTalks);
+    handleData("http://api.laprudence.be/project2/v2/sprekers", getSpeakers)
 });
