@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="c-back d-flex mb-5">
-      <a href="#" class="c-btn c-btn--pink py-2 px-5 w-auto" onclick="history.back(-1)"><i class="fas fa-long-arrow-alt-left me-3"></i>Go back</a>
+      <a href="schedule.php" class="c-btn c-btn--pink py-2 px-5 w-auto"><i class="fas fa-long-arrow-alt-left me-3"></i>Go back</a>
     </div>
 
     <div class="row">

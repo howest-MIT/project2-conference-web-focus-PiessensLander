@@ -9,5 +9,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" />
     <link rel="stylesheet" href="css/owl.theme.default.css" />
     <link rel="stylesheet" href="css/screen.css" />
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
 
 </head>
