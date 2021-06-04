@@ -8,7 +8,7 @@
     [GET] - Talk detail: http://api.laprudence.be/project2/v2/talks/{id}
 */
 
-let getSpeakerId = function () {
+const getSpeakerId = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const speakerId = urlParams.get('speakerid');
 
@@ -41,7 +41,6 @@ const getTalks = function (response) {
 }
 
 const processTalks = function (response) {
-    console.log(response)
     if (response.id == 100) {
         document.querySelector(".js-schedule-aula").innerHTML = `
         <h3 class="text-white">${response.omschrijving}</h3>
@@ -114,8 +113,38 @@ const processTalks = function (response) {
     }
 }
 
+const getSessionId = function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('sessionid');
+
+    if (sessionId) {
+        handleData(`http://api.laprudence.be/project2/v2/talks/${sessionId}`, sessionDetails);
+    } else {
+        console.log('De querystring ontbreekt');
+    }
+};
+
+const sessionDetails = function (response) {
+    console.log(response);
+    document.querySelector(".js-session-title").innerHTML = `
+    <div>Let's talk about...</div>
+    <h1 class="text-pink">${response.titel}</h1>
+    <h3>${response.spreker.voornaam} ${response.spreker.familienaam}</h3>`
+    document.querySelector(".js-session-desc").innerHTML = `
+    <h3 class="text-pink mb-4">${response.zaal.omschrijving} - ${response.start}h</h3>
+    <p class="mb-4 c-session__desc">${response.omschrijving.eng}</p>
+    <div class="c-session__share">
+      <p class="mb-2">Share on</p>
+      <div class="c-share__buttons d-flex">
+        <a href="#" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3">Facebook</a>
+        <a href="https://twitter.com/intent/tweet?text=${response.titel}%20on%20Multi-Mania!" target="_blank" class="c-btn c-btn--twitter py-2 px-5 w-auto">Twitter</a>
+      </div>
+    </div>`
+};
+
 document.addEventListener('DOMContentLoaded', function () {
     console.info('DOM geladen');
     getSpeakerId();
+    getSessionId();
     handleData("http://api.laprudence.be/project2/v2/zalen", getTalks);
 });

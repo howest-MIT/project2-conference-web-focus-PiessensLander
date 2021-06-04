@@ -25,12 +25,12 @@
     <div class="row">
       <div class="col-sm-12 col-lg-7">
         <div class="c-session mb-5">
-          <div class="c-speaker__title mb-5">
+          <div class="c-speaker__title mb-5 js-session-title">
             <div>Let's talk about...</div>
             <h1 class="text-pink">Visual FX for Film and TV</h1>
             <h3>Michael O'Neill</h3>
           </div>
-          <div class="col-sm-12 col-lg-8">
+          <div class="col-sm-12 col-lg-8 js-session-desc">
             <h3 class="text-pink mb-4">Room 1 - 10:30h</h3>
             <p class="mb-4 c-session__desc">TV interactivity is experiencing a pivotal moment. Connected TV's, second screens and the over-the-top services all compete for the ultimate rich TV experience. Will TV finally become truly connected in 2012? We'll share best practices and valuable formats for Broadcasters and brands for implementing better interactive TV services", "Second Screen Applications”</p>
             <div class="c-session__share">
