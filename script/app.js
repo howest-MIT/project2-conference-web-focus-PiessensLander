@@ -157,7 +157,7 @@ const getSpeakers = function (response) {
             <p>${i.bio.eng}</p>
           </div>
           <div class="c-card__footer d-flex flex-wrap justify-content-between">
-            <a class="c-btn c-btn--outline py-2 px-5 w-auto">
+            <a class="c-btn c-btn--outline py-2 px-4 w-auto">
               <i class="far fa-heart me-2"></i>Like
             </a>
             <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto">

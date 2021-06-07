@@ -615,3 +615,16 @@ footer {
 		height: 100%;
 	}
 }
+
+.c-order {
+	margin: 0 auto;
+	background: #f5f3f3;
+	border-radius: 12px;
+	&__overview {
+		border-bottom: 1px solid #e6e6e6;
+	}
+	button {
+		border: none;
+		margin: 0 auto;
+	}
+}
