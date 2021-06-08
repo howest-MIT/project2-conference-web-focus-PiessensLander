@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "src/helper/header.php" ?>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Mania 2022</title>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/owl.carousel.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.css" />
+  <link rel="stylesheet" href="css/screen.css" />
+  <script src="script/dataHandler.js"></script>
+  <script src="script/speaker-detail.js"></script>
+
+</head>
 
 <body>
 
@@ -10,8 +25,8 @@
         <img src="img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
         <ul class="c-nav__items d-flex justify-content-center">
           <li class="c-nav__link c-nav__link--light px-3"><a href="index.php">Home</a></li>
-          <li class="c-nav__link c-nav__link--light px-3"><a href="schedule.php" class="active">Program</a></li>
-          <li class="c-nav__link c-nav__link--light px-3"><a href="speakers.php">Speakers</a></li>
+          <li class="c-nav__link c-nav__link--light px-3"><a href="schedule.php">Program</a></li>
+          <li class="c-nav__link c-nav__link--light px-3"><a href="speakers.php" class="active">Speakers</a></li>
           <li class="c-nav__link c-nav__link--light px-3"><a href="partners.php">Partners</a></li>
           <li class="c-nav__link c-nav__link--light px-3"><a href="contact.php">Contact</a></li>
         </ul>
@@ -21,8 +36,7 @@
     <div class="c-back d-flex mb-5">
       <a href="speakers.php" class="c-btn c-btn--pink py-2 px-5 w-auto"><i class="fas fa-long-arrow-alt-left me-3"></i>Go back</a>
     </div>
-    <div class="js-placeholder"></div>
-    <div class="row">
+    <div class="row js-noid">
       <div class="c-speaker mb-5">
         <div class="c-speaker__name">
           <div class="c-badge bg-pink mb-2">Speaker</div>

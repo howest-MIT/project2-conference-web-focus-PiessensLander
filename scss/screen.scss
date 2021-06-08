@@ -577,6 +577,15 @@ footer {
 
 .c-sponsors {
 	> div {
+		padding: 2rem;
+		border-radius: 12px;
+		transition: 0.3s all;
+		&:hover {
+			background-color: #f5f3f3;
+		}
+		a {
+			height: 100%;
+		}
 		img {
 			width: 70%;
 		}

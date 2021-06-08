@@ -28,10 +28,9 @@ const speakerDetails = function (response) {
   if (response.twitter) {
     document.querySelector(".js-socials").innerHTML += `<a href="${response.twitter}" target="_blank" class="c-btn c-btn--twitter py-2 px-5 w-auto me-3">Twitter</a>`;
   }
-}
+};
 
 document.addEventListener('DOMContentLoaded', function () {
   console.info('DOM geladen');
   getSpeakerId();
-  handleData()
 });

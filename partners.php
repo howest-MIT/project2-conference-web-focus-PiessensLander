@@ -27,42 +27,42 @@
         <div class="row mb-5 c-sponsors">
             <h3 class="text-pink">Gold sponsors</h3>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center justify-content-between">
-                <img src="img/intellij.png" alt="IntellIJ">
+                <a href="https://www.jetbrains.com/idea/" target="_blank" class="text-center mb-4"><img src="img/intellij.png" alt="IntellIJ"></a>
                 <h5 class="text-pink">IntelliJ</h5>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center justify-content-between">
-                <img src="img/discord.png" alt="Discord">
+                <a href="https://www.discord.com" target="_blank" class="text-center mb-4"><img src="img/discord.png" alt="Discord"></a>
                 <h5 class="text-pink">Discord</h5>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center justify-content-between">
-                <img src="img/telenet.png" alt="Telenet">
+                <a href="https://www.telenet.be" target="_blank" class="text-center mb-4"><img src="img/telenet.png" alt="Telenet"></a>
                 <h5 class="text-pink">Telenet</h5>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center justify-content-between">
-                <img src="img/microsoft.png" alt="Microsoft">
+                <a href="https://microsoft.com" target="_blank" class="text-center mb-4"><img src="img/microsoft.png" alt="Microsoft"></a>
                 <h5 class="text-pink">Microsoft</h5>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center justify-content-between">
-                <img src="img/howest.png" alt="Howest">
+                <a href="https://howest.be" target="_blank" class="text-center mb-4"><img src="img/howest.png" alt="Howest"></a>
                 <h5 class="text-pink">Howest</h5>
             </div>
         </div>
-        <div class="row mb-5 c-sponsors">
+        <div class="row mb-5 c-sponsors d-flex align-items-center">
             <h3 class="text-pink">Friends and sponsors</h3>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center">
-                <img src="img/cocacola.png" alt="IntellIJ">
+                <a href="https://coca-cola.com" target="_blank" class="text-center"><img src="img/cocacola.png" alt="IntellIJ"></a>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center">
-                <img src="img/digitalocean.png" alt="Digital Ocean">
+                <a href="https://digitalocean.com" target="_blank" class="text-center"><img src="img/digitalocean.png" alt="Digital Ocean"></a>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center">
-                <img src="img/nordvpn.jpg" alt="NordVPN">
+                <a href="https://nordvpn.com" target="_blank" class="text-center"><img src="img/nordvpn.jpg" alt="NordVPN"></a>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center">
-                <img src="img/stubru.png" alt="StuBr">
+                <a href="https://stubru.be" target="_blank" class="text-center"><img src="img/stubru.png" alt="StuBr"></a>
             </div>
             <div class="col-sm-6 col-lg-2 d-flex flex-column align-items-center">
-                <img src="img/vlaamseoverheid.jpg" alt="Vlaamse overheid">
+                <a href="https://vlaanderen.be" target="_blank" class="text-center"><img src="img/vlaamseoverheid.jpg" alt="Vlaamse overheid"></a>
             </div>
         </div>
     </div>

@@ -92,7 +92,7 @@
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus esse ipsam! Veniam ea reprehenderit amet animi magni fugit odio placeat sapiente facilis quam, autem reiciendis itaque culpa aliquam tempora.</^p>
 							</div>
 							<div class="c-card__footer d-flex flex-wrap justify-content-between">
-								<a class="c-btn c-btn--outline py-2 px-5 w-auto">
+								<a class="c-btn c-btn--outline py-2 px-4 w-auto">
 									<i class="far fa-heart me-2"></i>Like
 								</a>
 								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
@@ -113,7 +113,7 @@
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus odio eligendi velit unde eos praesentium, illo harum placeat eaque voluptatem.</p>
 							</div>
 							<div class="c-card__footer d-flex flex-wrap justify-content-between">
-								<a class="c-btn c-btn--outline py-2 px-5 w-auto">
+								<a class="c-btn c-btn--outline py-2 px-4 w-auto">
 									<i class="far fa-heart me-2"></i>Like
 								</a>
 								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
@@ -134,7 +134,7 @@
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum laudantium nihil possimus quo consequuntur ipsam molestias iure libero placeat veritatis. Neque autem unde veritatis tempora reprehenderit eveniet nesciunt fuga maxime? Fugit voluptatum, incidunt modi culpa maxime amet numquam assumenda odio sunt illo asperiores facere aut cupiditate, a quos quaerat dolor!</p>
 							</div>
 							<div class="c-card__footer d-flex flex-wrap justify-content-between">
-								<a class="c-btn c-btn--outline py-2 px-5 w-auto">
+								<a class="c-btn c-btn--outline py-2 px-4 w-auto">
 									<i class="far fa-heart me-2"></i>Like
 								</a>
 								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
