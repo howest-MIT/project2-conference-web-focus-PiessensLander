@@ -6,19 +6,36 @@
 	<div class="bg" style="height: 80vh"></div>
 
 	<div class="container">
-		<div class="row py-4">
-			<div class="c-nav d-flex justify-content-between align-items-center">
-				<img src="img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
-				<ul class="c-nav__items d-flex justify-content-center">
-					<li class="c-nav__link px-3"><a href="index.php" class="active">Home</a></li>
-					<li class="c-nav__link px-3"><a href="schedule.php">Program</a></li>
-					<li class="c-nav__link px-3"><a href="speakers.php">Speakers</a></li>
-					<li class="c-nav__link px-3"><a href="partners.php">Partners</a></li>
-					<li class="c-nav__link px-3"><a href="contact.php">Contact</a></li>
-				</ul>
-				<a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5">Buy tickets</a>
+		<nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
+			<div class="container-fluid m-0 p-0">
+				<a class="navbar-brand w-auto c-nav__logo" href="#">
+					<img src="img/logo_fw.png" alt="Logo" class="w-100">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mx-auto ">
+						<li class="c-nav__link px-3 mb-3 mb-lg-0">
+							<a class="active" href="index.php">Home</a>
+						</li>
+						<li class="c-nav__link px-3 mb-3 mb-lg-0">
+							<a href="schedule.php">Program</a>
+						</li>
+						<li class="c-nav__link px-3 mb-3 mb-lg-0">
+							<a href="speakers.php">Speakers</a>
+						</li>
+						<li class="c-nav__link px-3 mb-3 mb-lg-0">
+							<a href="partners.php">Partners</a>
+						</li>
+						<li class="c-nav__link px-3 mb-3 mb-lg-0">
+							<a href="contact.php">Contact</a>
+						</li>
+					</ul>
+					<a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+				</div>
 			</div>
-		</div>
+		</nav>
 		<div class="row c-header">
 			<h1 class="text-white text-center">Welcome to Multi-Mania!</h1>
 			<p class="text-white text-center">Belgium's biggest IT conference</p>
@@ -78,71 +95,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<h2 class="text-white text-center mb-4">Some of our speakers</h2>
-				<div class="row d-flex mb-5 justify-content-center">
-					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3 align-items-stretch">
-						<div class="c-card p-4">
-							<div class="c-card__header mb-3">
-								<h3>Aral Balkan</h3>
-							</div>
-							<div class="c-card__image mb-3">
-								<img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
-							</div>
-							<div class="c-card__description mb-3 d-flex">
-								<!-- Langere tekst: functie in PHP, x-aantal karakters laten zien. Als karakters meer zijn: aanvullen met '...' -->
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus esse ipsam! Veniam ea reprehenderit amet animi magni fugit odio placeat sapiente facilis quam, autem reiciendis itaque culpa aliquam tempora.</^p>
-							</div>
-							<div class="c-card__footer d-flex flex-wrap justify-content-between">
-								<a class="c-btn c-btn--outline py-2 px-4 w-auto">
-									<i class="far fa-heart me-2"></i>Like
-								</a>
-								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
-									More info
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3">
-						<div class="c-card p-4">
-							<div class="c-card__header mb-3">
-								<h3>Aral Balkan</h3>
-							</div>
-							<div class="c-card__image mb-3">
-								<img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
-							</div>
-							<div class="c-card__description mb-3">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus odio eligendi velit unde eos praesentium, illo harum placeat eaque voluptatem.</p>
-							</div>
-							<div class="c-card__footer d-flex flex-wrap justify-content-between">
-								<a class="c-btn c-btn--outline py-2 px-4 w-auto">
-									<i class="far fa-heart me-2"></i>Like
-								</a>
-								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
-									More info
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-3">
-						<div class="c-card p-4">
-							<div class="c-card__header mb-3">
-								<h3>Aral Balkan</h3>
-							</div>
-							<div class="c-card__image mb-3">
-								<img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Speaker">
-							</div>
-							<div class="c-card__description mb-3">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum laudantium nihil possimus quo consequuntur ipsam molestias iure libero placeat veritatis. Neque autem unde veritatis tempora reprehenderit eveniet nesciunt fuga maxime? Fugit voluptatum, incidunt modi culpa maxime amet numquam assumenda odio sunt illo asperiores facere aut cupiditate, a quos quaerat dolor!</p>
-							</div>
-							<div class="c-card__footer d-flex flex-wrap justify-content-between">
-								<a class="c-btn c-btn--outline py-2 px-4 w-auto">
-									<i class="far fa-heart me-2"></i>Like
-								</a>
-								<a href="speaker-detail.php" class="c-btn c-btn--pink py-2 px-5 w-auto">
-									More info
-								</a>
-							</div>
-						</div>
-					</div>
+				<div class="row d-flex mb-5 justify-content-center js-cards">
 				</div>
 				<a href="bestel.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Buy tickets</a>
 			</div>
@@ -229,6 +182,8 @@
 		</div>
 	</footer>
 
+	<script src="script/index.js"></script>
+	<script src="script/dataHandler.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

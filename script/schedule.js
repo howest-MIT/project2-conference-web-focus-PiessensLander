@@ -13,10 +13,27 @@ const processTalks = function (response) {
         <div class="c-schedule d-flex flex-wrap js-aula-talks">
         </div>`
         for (let i of response.talks) {
+            let fname = "";
+            let lname = "";
+            let name = "";
+
+            if (i.spreker.voornaam && i.spreker.voornaam != null) {
+                fname = i.spreker.voornaam
+            } else {
+                fname = "";
+            }
+
+            if (i.spreker.familienaam && i.spreker.familienaam != null) {
+                lname = i.spreker.familienaam
+            } else {
+                lname = "";
+            }
+
+            name = fname + " " + lname;
             document.querySelector(".js-aula-talks").innerHTML += `
             <a href="session-detail.php?sessionid=${i.id}" class="c-schedule__item d-flex flex-column me-4 mt-4">
                 <p class="c-schedule__time">${i.start}h</p>
-                <p class="c-schedule__speaker">${i.spreker.voornaam} ${i.spreker.familienaam}</p>
+                <p class="c-schedule__speaker">${name}</p>
                 <p class="c-schedule__topic">${i.titel}</p>
             </a>`
         };
@@ -27,10 +44,27 @@ const processTalks = function (response) {
         <div class="c-schedule d-flex flex-wrap js-room1-talks">
         </div>`
         for (let i of response.talks) {
+            let fname = "";
+            let lname = "";
+            let name = "";
+
+            if (i.spreker.voornaam && i.spreker.voornaam != null) {
+                fname = i.spreker.voornaam
+            } else {
+                fname = "";
+            }
+
+            if (i.spreker.familienaam && i.spreker.familienaam != null) {
+                lname = i.spreker.familienaam
+            } else {
+                lname = "";
+            }
+
+            name = fname + " " + lname;
             document.querySelector(".js-room1-talks").innerHTML += `
             <a href="session-detail.php?sessionid=${i.id}" class="c-schedule__item d-flex flex-column me-4 mt-4">
                 <p class="c-schedule__time">${i.start}h</p>
-                <p class="c-schedule__speaker">${i.spreker.voornaam} ${i.spreker.familienaam}</p>
+                <p class="c-schedule__speaker">${name}</p>
                 <p class="c-schedule__topic">${i.titel}</p>
             </a>`
         };
@@ -41,10 +75,27 @@ const processTalks = function (response) {
         <div class="c-schedule d-flex flex-wrap js-room2-talks">
         </div>`
         for (let i of response.talks) {
+            let fname = "";
+            let lname = "";
+            let name = "";
+
+            if (i.spreker.voornaam && i.spreker.voornaam != null) {
+                fname = i.spreker.voornaam
+            } else {
+                fname = "";
+            }
+
+            if (i.spreker.familienaam && i.spreker.familienaam != null) {
+                lname = i.spreker.familienaam
+            } else {
+                lname = "";
+            }
+
+            name = fname + " " + lname;
             document.querySelector(".js-room2-talks").innerHTML += `
             <a href="session-detail.php?sessionid=${i.id}" class="c-schedule__item d-flex flex-column me-4 mt-4">
                 <p class="c-schedule__time">${i.start}h</p>
-                <p class="c-schedule__speaker">${i.spreker.voornaam} ${i.spreker.familienaam}</p>
+                <p class="c-schedule__speaker">${name}</p>
                 <p class="c-schedule__topic">${i.titel}</p>
             </a>`
         };
@@ -55,10 +106,27 @@ const processTalks = function (response) {
         <div class="c-schedule d-flex flex-wrap js-room3-talks">
         </div>`
         for (let i of response.talks) {
+            let fname = "";
+            let lname = "";
+            let name = "";
+
+            if (i.spreker.voornaam && i.spreker.voornaam != null) {
+                fname = i.spreker.voornaam
+            } else {
+                fname = "";
+            }
+
+            if (i.spreker.familienaam && i.spreker.familienaam != null) {
+                lname = i.spreker.familienaam
+            } else {
+                lname = "";
+            }
+
+            name = fname + " " + lname;
             document.querySelector(".js-room3-talks").innerHTML += `
             <a href="session-detail.php?sessionid=${i.id}" class="c-schedule__item d-flex flex-column me-4 mt-4">
                 <p class="c-schedule__time">${i.start}h</p>
-                <p class="c-schedule__speaker">${i.spreker.voornaam} ${i.spreker.familienaam}</p>
+                <p class="c-schedule__speaker">${name}</p>
                 <p class="c-schedule__topic">${i.titel}</p>
             </a>`
         };
@@ -69,10 +137,27 @@ const processTalks = function (response) {
         <div class="c-schedule d-flex flex-wrap js-room4-talks">
         </div>`
         for (let i of response.talks) {
+            let fname = "";
+            let lname = "";
+            let name = "";
+
+            if (i.spreker.voornaam && i.spreker.voornaam != null) {
+                fname = i.spreker.voornaam
+            } else {
+                fname = "";
+            }
+
+            if (i.spreker.familienaam && i.spreker.familienaam != null) {
+                lname = i.spreker.familienaam
+            } else {
+                lname = "";
+            }
+
+            name = fname + " " + lname;
             document.querySelector(".js-room4-talks").innerHTML += `
             <a href="session-detail.php?sessionid=${i.id}" class="c-schedule__item d-flex flex-column me-4 mt-4">
                 <p class="c-schedule__time">${i.start}h</p>
-                <p class="c-schedule__speaker">${i.spreker.voornaam} ${i.spreker.familienaam}</p>
+                <p class="c-schedule__speaker">${name}</p>
                 <p class="c-schedule__topic">${i.titel}</p>
             </a>`
         };

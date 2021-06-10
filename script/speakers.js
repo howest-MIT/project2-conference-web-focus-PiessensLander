@@ -40,10 +40,10 @@ const getSpeakers = function (response) {
             <p>${i.bio.eng}</p>
           </div>
           <div class="c-card__footer d-flex flex-wrap justify-content-between">
-            <a class="c-btn c-btn--outline js-like py-2 px-4 px-xl-5 w-auto">
+            <a class="c-btn c-btn--outline js-like py-2 px-4 px-xl-5 w-auto text-center mb-3 mb-xl-0">
               <i class="far fa-heart me-2"></i>Like
             </a>
-            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto">
+            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto text-center">
               More info
             </a>
           </div>

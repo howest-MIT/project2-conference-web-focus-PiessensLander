@@ -9,19 +9,36 @@
 
 <body>
     <div class="container">
-        <div class="row py-4 mb-5">
-            <div class="c-nav d-flex justify-content-between align-items-center">
-                <img src="img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
-                <ul class="c-nav__items d-flex justify-content-center">
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="index.php">Home</a></li>
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="schedule.php">Program</a></li>
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="speakers.php">Speakers</a></li>
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="partners.php">Partners</a></li>
-                    <li class="c-nav__link c-nav__link--light px-3"><a href="contact.php" class="active">Contact</a></li>
-                </ul>
-                <a href="bestel.php" class="c-nav__cta c-btn c-btn--pink py-2 px-5">Buy tickets</a>
+        <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
+            <div class="container-fluid m-0 p-0">
+                <a class="navbar-brand w-auto c-nav__logo" href="#">
+                    <img src="img/logo_fw.png" alt="Logo" class="w-100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
+                            <a href="schedule.php">Program</a>
+                        </li>
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
+                            <a href="speakers.php">Speakers</a>
+                        </li>
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
+                            <a href="partners.php">Partners</a>
+                        </li>
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
+                            <a class="active" href="contact.php">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="bestel.php" class="c-nav__cta c-btn c-btn--pink py-2 px-5 text-center">Buy tickets</a>
+                </div>
             </div>
-        </div>
+        </nav>
         <div class="row mb-3">
             <div class="c-title c-title--pink p-4 mb-5 d-flex flex-row align-items-center justify-content-between">
                 <h2>Contact us</h2>
@@ -67,6 +84,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>

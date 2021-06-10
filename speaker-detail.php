@@ -20,19 +20,36 @@
 <body>
 
   <div class="container">
-    <div class="row py-4 mb-5">
-      <div class="c-nav c-nav--light d-flex justify-content-between align-items-center">
-        <img src="img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
-        <ul class="c-nav__items d-flex justify-content-center">
-          <li class="c-nav__link c-nav__link--light px-3"><a href="index.php">Home</a></li>
-          <li class="c-nav__link c-nav__link--light px-3"><a href="schedule.php">Program</a></li>
-          <li class="c-nav__link c-nav__link--light px-3"><a href="speakers.php" class="active">Speakers</a></li>
-          <li class="c-nav__link c-nav__link--light px-3"><a href="partners.php">Partners</a></li>
-          <li class="c-nav__link c-nav__link--light px-3"><a href="contact.php">Contact</a></li>
-        </ul>
-        <a href="bestel.php" class="c-nav__cta c-btn c-btn--pink py-2 px-5">Buy tickets</a>
+    <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
+      <div class="container-fluid m-0 p-0">
+        <a class="navbar-brand w-auto c-nav__logo" href="#">
+          <img src="img/logo_fw.png" alt="Logo" class="w-100">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto ">
+            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+              <a href="index.php">Home</a>
+            </li>
+            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+              <a href="schedule.php">Program</a>
+            </li>
+            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+              <a class="active" href="speakers.php">Speakers</a>
+            </li>
+            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+              <a href="partners.php">Partners</a>
+            </li>
+            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+              <a href="contact.php">Contact</a>
+            </li>
+          </ul>
+          <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+        </div>
       </div>
-    </div>
+    </nav>
     <div class="c-back d-flex mb-5">
       <a href="speakers.php" class="c-btn c-btn--pink py-2 px-5 w-auto"><i class="fas fa-long-arrow-alt-left me-3"></i>Go back</a>
     </div>
@@ -48,8 +65,8 @@
           <img src="img/user_placeholder.png" alt="Aral Balkan" class="c-img w-100 mb-4 js-img">
           <div class="c-speaker__share">
             <p class="mb-2">Share on</p>
-            <div class="c-share__buttons d-flex">
-              <a href="#" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3">Facebook</a>
+            <div class="c-share__buttons d-flex flex-wrap">
+              <a href="#" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3 mb-3 mb-sm-0 mb-lg-3 mb-xl-0">Facebook</a>
               <a href="https://twitter.com/intent/tweet?text=Aral%20Balkan%20on%20Multi-Mania!" target="_blank" class="c-btn c-btn--twitter py-2 px-5 w-auto js-sharetwitter">Twitter</a>
             </div>
           </div>
@@ -72,7 +89,7 @@
           </div>
           <div class="c-speaker__socials mb-5">
             <p class="mb-2">Find <b class="js-speakernamesocial">Aral Balkan</b> on</p>
-            <div class="c-socials__buttons d-flex js-socials">
+            <div class="c-socials__buttons d-flex js-socials flex-wrap">
               <a href="#" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3">Facebook</a>
               <a href="#" class="c-btn c-btn--twitter py-2 px-5 w-auto js-twitter">Twitter</a>
             </div>
@@ -90,6 +107,8 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 
 </html>

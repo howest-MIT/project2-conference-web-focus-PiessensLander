@@ -117,7 +117,9 @@ footer {
 
 .c-nav {
 	&__logo {
-		max-width: 20%;
+		img {
+			max-width: 80%;
+		}
 	}
 	&__items {
 		margin: 0;
@@ -298,7 +300,6 @@ footer {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		justify-content: space-between;
-
 		button {
 			span {
 				font-size: 5rem;
@@ -316,7 +317,7 @@ footer {
 	&__item {
 		padding: 0 2rem;
 		img {
-			width: 100%;
+			width: 100% !important;
 		}
 	}
 }

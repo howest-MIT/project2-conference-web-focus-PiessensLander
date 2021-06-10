@@ -17,14 +17,14 @@ const sessionDetails = function (response) {
   let name = "";
   let image = "";
 
-  if (response.voornaam && response.voornaam != null) {
-    fname = response.voornaam
+  if (response.spreker.voornaam && response.spreker.voornaam != null) {
+    fname = response.spreker.voornaam
   } else {
     fname = "";
   }
 
-  if (response.familienaam && response.familienaam != null) {
-    lname = response.familienaam
+  if (response.spreker.familienaam && response.spreker.familienaam != null) {
+    lname = response.spreker.familienaam
   } else {
     lname = "";
   }
