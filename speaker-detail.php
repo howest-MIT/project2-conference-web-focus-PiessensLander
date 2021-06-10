@@ -30,19 +30,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto ">
-            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+            <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
               <a href="index.php">Home</a>
             </li>
-            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+            <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
               <a href="schedule.php">Program</a>
             </li>
-            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+            <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
               <a class="active" href="speakers.php">Speakers</a>
             </li>
-            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+            <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
               <a href="partners.php">Partners</a>
             </li>
-            <li class="c-nav__link px-3 mb-3 mb-lg-0">
+            <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
               <a href="contact.php">Contact</a>
             </li>
           </ul>
@@ -82,7 +82,7 @@
                 <head> model. As developer, Aral has been programming for over twenty years (he started really early), has a love for learning new programming languages, a passion for simplicity, and an enduring fondness for both visual and experience design. He is the creator of the SWX data format (the native data format for the Flash Platform) and SWX-PHP (the PHP implementation of SWX-RPC). Unabashedly an alpha geek, he is currently hacking Objective-C on the iPhone, Python and Django on Google App Engine, and Flash, Flex, and ActionScript on the Flash Platform. As entrepreneur, Aral is founder and director of Naklab, a UK-based idea factory and web consultancy and Geek Ninja Factory, a design and development training company par excellence. Aral is an advocate of open source and Creative Commons and has launched several open initiatives and projects, including OSFlash, the home of the open-source Flash community, SWX, and, more recently, the Google App Engine Backup and Restore project to bring data portability to the App Engine platform. Aral is immensely passionate about the potential that the Internet holds for individual empowerment, education, and the democratization of communication and self-expression. He finds the convergence of commoditized infrastructure, multi-gestural interfaces, the emerging ubiquity of the mobile Internet, and location-based services hugely exciting.
           </p>
           <div class="c-speaker__like d-flex align-items-center mb-4">
-            <a class="c-btn c-btn--outline py-2 px-5 w-auto me-3">
+            <a class="c-btn c-btn--outline js-addlike py-2 px-5 w-auto me-3">
               <i class="far fa-heart me-2"></i>Like
             </a>
             <p class="js-likes">11 likes</p>

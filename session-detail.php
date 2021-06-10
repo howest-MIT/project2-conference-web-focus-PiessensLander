@@ -65,6 +65,12 @@
           <div class="col-sm-12 col-lg-8 js-session-desc">
             <h3 class="text-pink mb-4">Room 1 - 10:30h</h3>
             <p class="mb-4 c-session__desc">TV interactivity is experiencing a pivotal moment. Connected TV's, second screens and the over-the-top services all compete for the ultimate rich TV experience. Will TV finally become truly connected in 2012? We'll share best practices and valuable formats for Broadcasters and brands for implementing better interactive TV services", "Second Screen Applications”</p>
+            <div class="c-speaker__like d-flex align-items-center mb-4">
+              <a class="c-btn c-btn--outline js-addlike py-2 px-5 w-auto me-3">
+                <i class="far fa-heart me-2"></i>Like
+              </a>
+              <p class="js-likes">11 likes</p>
+            </div>
             <div class="c-session__share">
               <p class="mb-2">Share on</p>
               <div class="c-share__buttons d-flex">

@@ -53,6 +53,10 @@ const speakerDetails = function (response) {
   if (response.twitter) {
     document.querySelector(".js-socials").innerHTML += `<a href="${response.twitter}" target="_blank" class="c-btn c-btn--twitter py-2 px-5 w-auto me-3 mb-3 mb-lg-0">Twitter</a>`;
   }
+
+  document.querySelector(".js-addlike").addEventListener("click", function () {
+    handleData(`http://api.laprudence.be/project2/v2/sprekers/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+  })
 };
 
 document.addEventListener('DOMContentLoaded', function () {

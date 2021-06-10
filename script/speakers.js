@@ -8,19 +8,19 @@ const getSpeakers = function (response) {
     let name = "";
     let image = "";
 
-    if (i.voornaam && i.voornaam != null) {
+    if (i.voornaam) {
       fname = i.voornaam
     } else {
       fname = "";
     }
 
-    if (i.familienaam && i.familienaam != null) {
+    if (i.familienaam) {
       lname = i.familienaam
     } else {
       lname = "";
     }
 
-    if (i.afbeelding && i.afbeelding != null) {
+    if (i.afbeelding) {
       image = i.afbeelding
     } else {
       image = "user_placeholder.png"
@@ -29,21 +29,21 @@ const getSpeakers = function (response) {
     name = fname + " " + lname;
 
     document.querySelector(".js-speakers").innerHTML += `<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-5 mb-2">
-        <div class="c-card p-4">
+        <div class="c-card p-4 d-flex flex-column">
           <div class="c-card__header mb-3">
             <h3>${name}</h3>
           </div>
           <div class="c-card__image mb-3">
             <img src="img/${image}" alt="Speaker">
           </div>
-          <div class="c-card__description mb-3 d-flex">
-            <p>${i.bio.eng}</p>
+          <div class="c-card__description mb-3 flex-grow-1">
+            <p class="js-desciption">${truncateText(i.bio.eng,100)}</p>
           </div>
           <div class="c-card__footer d-flex flex-wrap justify-content-between">
-            <a class="c-btn c-btn--outline js-like py-2 px-4 px-xl-5 w-auto text-center mb-3 mb-xl-0">
+            <a class="c-btn c-btn--outline js-addlike py-2 px-4 me-0 me-xl-3 px-xl-5 w-auto text-center mb-3 mb-xl-0 flex-grow-1">
               <i class="far fa-heart me-2"></i>Like
             </a>
-            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto text-center">
+            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto text-center flex-grow-1">
               More info
             </a>
           </div>
@@ -51,9 +51,7 @@ const getSpeakers = function (response) {
       </div>`;
 
     // Add like
-    // document.querySelectorAll(".js-like").addEventListener("click", function () {
-    //   handleData(`http://api.laprudence.be/project2/v2/sprekers/${response.id}/love`,);
-    // })
+
   };
 
   document.querySelector('.js-pagination').innerHTML = `
@@ -69,7 +67,7 @@ const getSpeakers = function (response) {
   };
 
   document.querySelector(".c-pagination__pages").innerHTML += `
-  <div class="c-pagination__page c-pagination__next p-2 d-flex justify-content-center align-items-center">
+  <div class="c-pagination__next p-2 d-flex justify-content-center align-items-center" data-next="${response.current_page}">
     <a href="#"><i class="fas fa-chevron-right"></i></a>
   </div>`;
 
@@ -91,12 +89,23 @@ const getSpeakers = function (response) {
   document.querySelector('.c-pagination__firstpage').addEventListener("click", function () {
     handleData(response.first_page_url, getSpeakers);
   });
+
   document.querySelector('.c-pagination__next').addEventListener("click", function () {
-    handleData(response.next_page_url, getSpeakers);
-    console.log(response.current_page)
+    if (response.next_page_url) {
+      handleData(response.next_page_url, getSpeakers);
+    } else {
+      handleData(response.path, getSpeakers)
+    }
   });
 
+}
 
+function truncateText(zin, maxLength) {
+  let truncated = zin;
+  if (zin.length > maxLength) {
+    truncated = zin.substr(0, maxLength) + '...';
+  }
+  return truncated;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
