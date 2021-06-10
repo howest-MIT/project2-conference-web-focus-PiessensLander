@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-lg-5">
-        <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Aral Balkan" class="c-img w-100 mb-4">
+        <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Aral Balkan" class="c-img w-100 mb-4 js-img">
       </div>
 
     </div>

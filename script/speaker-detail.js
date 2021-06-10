@@ -16,10 +16,35 @@ let getSpeakerId = function () {
 };
 
 const speakerDetails = function (response) {
+  let fname = "";
+  let lname = "";
+  let name = "";
+  let image = "";
+
+  if (response.voornaam && response.voornaam != null) {
+    fname = response.voornaam
+  } else {
+    fname = "";
+  }
+
+  if (response.familienaam && response.familienaam != null) {
+    lname = response.familienaam
+  } else {
+    lname = "";
+  }
+
+  if (response.afbeelding && response.afbeelding != null) {
+    image = response.afbeelding
+  } else {
+    image = "user_placeholder.png"
+  }
+
+  name = fname + " " + lname;
   document.querySelector(".js-socials").innerHTML = ""
   document.querySelector(".js-sharetwitter").href = `https://twitter.com/intent/tweet?text=${response.voornaam}%20${response.familienaam}%20will%20be%20talking%20at%20Multi-Mania!`
-  document.querySelector(".js-speakername").innerHTML = response.voornaam + " " + response.familienaam;
-  document.querySelector(".js-speakernamesocial").innerHTML = response.voornaam + " " + response.familienaam;
+  document.querySelector(".js-speakername").innerHTML = name;
+  document.querySelector(".js-speakernamesocial").innerHTML = name;
+  document.querySelector(".js-img").src = `img/${image}`;
   document.querySelector(".js-bio").innerHTML = response.bio["eng"];
   document.querySelector(".js-likes").innerHTML = response.love_teller + " likes";
   if (response.facebook) {

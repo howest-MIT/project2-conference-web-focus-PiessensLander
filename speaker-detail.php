@@ -45,7 +45,7 @@
       </div>
       <div class="row gap-5 mb-5">
         <div class="col-sm-12 col-lg-4">
-          <img src="https://www.troyhunt.com/content/images/2016/12/P1220073.jpg" alt="Aral Balkan" class="c-img w-100 mb-4">
+          <img src="img/user_placeholder.png" alt="Aral Balkan" class="c-img w-100 mb-4 js-img">
           <div class="c-speaker__share">
             <p class="mb-2">Share on</p>
             <div class="c-share__buttons d-flex">
