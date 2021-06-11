@@ -1,25 +1,14 @@
+<?php
+//
+print_r($_POST)
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multi-Mania 2022</title>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/owl.carousel.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.css" />
-    <link rel="stylesheet" href="css/screen.css" />
-    <script src="script/dataHandler.js"></script>
-    <script src="script/schedule.js"></script>
-
-</head>
+<?php include "src/helper/header.php" ?>
 
 <body>
-    <div class="bg" style="height: 45vh"></div>
-
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
             <div class="container-fluid m-0 p-0">
@@ -35,7 +24,7 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a class="active" href="schedule.php">Program</a>
+                            <a href="schedule.php">Program</a>
                         </li>
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
                             <a href="speakers.php">Speakers</a>
@@ -51,27 +40,27 @@
                 </div>
             </div>
         </nav>
-        <div class="row">
-            <div class="c-title c-title--white p-4 mb-5 d-flex flex-row align-items-center justify-content-between">
-                <h2>All talks</h2>
+        <div class="row mb-3">
+            <div class="c-title c-title--pink p-4 mb-5 d-flex flex-row align-items-center justify-content-between">
+                <h2>Review your order</h2>
             </div>
         </div>
-        <div class="js-schedule">
-
-            <div class="row mb-5 js-schedule-aula">
-
-            </div>
-            <div class="row mb-5 js-schedule-room1">
-
-            </div>
-            <div class="row mb-5 js-schedule-room2">
-
-            </div>
-            <div class="row mb-5 js-schedule-room3">
-
-            </div>
-            <div class="row mb-5 js-schedule-room4">
-
+        <div class="row mb-5">
+            <div class="c-order col-12 col-lg-6 p-4">
+                <p class="mb-3"><b>Order summary</b></p>
+                <div class="c-order__overview">
+                    <div class="c-order__amount d-flex justify-content-between py-2">
+                        <p>2x Early Bird ticket</p>
+                        <p>€32</p>
+                    </div>
+                </div>
+                <div class="c-order__total mb-5">
+                    <div class="c-order__amount d-flex justify-content-between py-2">
+                        <p>Subtotal</p>
+                        <p>€32</p>
+                    </div>
+                </div>
+                <button type="submit" class="c-btn c-btn--pink py-2 px-5 w-auto">Complete order</button>
             </div>
         </div>
     </div>
