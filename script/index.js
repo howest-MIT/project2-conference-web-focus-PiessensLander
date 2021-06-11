@@ -30,22 +30,24 @@ const getSpeakers = function (response) {
 
     name = fname + " " + lname;
 
-    document.querySelector(".js-cards").innerHTML += `<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-5 mb-2">
-        <div class="c-card p-4">
+    document.querySelector(".js-cards").innerHTML += `
+      
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-5 mb-2">
+        <div class="c-card p-4 d-flex flex-column">
           <div class="c-card__header mb-3">
             <h3>${name}</h3>
           </div>
           <div class="c-card__image mb-3">
             <img src="img/${image}" alt="Speaker">
           </div>
-          <div class="c-card__description mb-3 d-flex">
-            <p>${response.data[i].bio.eng}</p>
+          <div class="c-card__description mb-3 flex-grow-1">
+            <p class="js-desciption">${truncateText(response.data[i].bio.eng,200)}</p>
           </div>
-          <div class="c-card__footer d-flex flex-wrap justify-content-between">
-            <a class="c-btn c-btn--outline js-like py-2 px-4 px-xl-5 w-auto text-center mb-3 mb-lg-0 flex-grow-1">
+          <div class="c-card__footer d-flex flex-wrap justify-content-between gap-2">
+            <a href="#" class="c-btn c-btn--outline js-addlike py-2 px-4 text-center w-auto mb-3 flex-grow-1" data-id="${response.data[i].id}">
               <i class="far fa-heart me-2"></i>Like
             </a>
-            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto text-center flex-grow-1">
+            <a href="speaker-detail.php?speakerid=${response.data[i].id}" class="c-btn c-btn--pink py-2 mb-3 w-auto px-4 text-center flex-grow-1">
               More info
             </a>
           </div>
@@ -57,9 +59,14 @@ const getSpeakers = function (response) {
     //   handleData(`http://api.laprudence.be/project2/v2/sprekers/${response.id}/love`,);
     // })
   };
+}
 
-
-
+function truncateText(zin, maxLength) {
+  let truncated = zin;
+  if (zin.length > maxLength) {
+    truncated = zin.substr(0, maxLength) + '...';
+  }
+  return truncated;
 }
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -37,13 +37,13 @@ const getSpeakers = function (response) {
             <img src="img/${image}" alt="Speaker">
           </div>
           <div class="c-card__description mb-3 flex-grow-1">
-            <p class="js-desciption">${truncateText(i.bio.eng,100)}</p>
+            <p class="js-desciption">${truncateText(i.bio.eng,200)}</p>
           </div>
-          <div class="c-card__footer d-flex flex-wrap justify-content-between">
-            <a class="c-btn c-btn--outline js-addlike py-2 px-4 me-0 me-xl-3 px-xl-5 w-auto text-center mb-3 mb-xl-0 flex-grow-1">
+          <div class="c-card__footer d-flex flex-wrap justify-content-between gap-2">
+            <a href="#" class="c-btn c-btn--outline js-addlike py-2 px-4 px-xl-5 text-center w-auto mb-3 flex-grow-1" data-id="${i.id}">
               <i class="far fa-heart me-2"></i>Like
             </a>
-            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 px-5 w-auto text-center flex-grow-1">
+            <a href="speaker-detail.php?speakerid=${i.id}" class="c-btn c-btn--pink py-2 mb-3 w-auto px-5 text-center flex-grow-1">
               More info
             </a>
           </div>
@@ -51,7 +51,12 @@ const getSpeakers = function (response) {
       </div>`;
 
     // Add like
-
+    let arrLikeBtn = document.querySelectorAll(".js-addlike");
+    for (let btn of arrLikeBtn) {
+      btn.addEventListener("click", function () {
+        handleData(`http://api.laprudence.be/project2/v2/sprekers/${btn.dataset.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+      })
+    }
   };
 
   document.querySelector('.js-pagination').innerHTML = `

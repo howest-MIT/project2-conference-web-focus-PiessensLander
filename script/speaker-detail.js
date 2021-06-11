@@ -41,12 +41,18 @@ const speakerDetails = function (response) {
 
   name = fname + " " + lname;
   document.querySelector(".js-socials").innerHTML = ""
-  document.querySelector(".js-sharetwitter").href = `https://twitter.com/intent/tweet?text=${response.voornaam}%20${response.familienaam}%20will%20be%20talking%20at%20Multi-Mania!`
+  document.querySelector(".js-sharetwitter").href = `https://twitter.com/intent/tweet?text=${name} will be talking at Mult-Mania!`
   document.querySelector(".js-speakername").innerHTML = name;
-  document.querySelector(".js-speakernamesocial").innerHTML = name;
   document.querySelector(".js-img").src = `img/${image}`;
   document.querySelector(".js-bio").innerHTML = response.bio["eng"];
   document.querySelector(".js-likes").innerHTML = response.love_teller + " likes";
+  document.querySelector(".c-speaker__socials").innerHTML = "";
+  if (response.facebook || response.twitter) {
+    document.querySelector(".c-speaker__socials").innerHTML += `
+    <p class="mb-2">Find <b>${name}</b> on</p>
+    <div class="c-socials__buttons d-flex js-socials flex-wrap">
+    </div>`;
+  }
   if (response.facebook) {
     document.querySelector(".js-socials").innerHTML += `<a href="${response.facebook}" target="_blank" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3 mb-3 mb-lg-0">Facebook</a>`;
   }
@@ -57,6 +63,20 @@ const speakerDetails = function (response) {
   document.querySelector(".js-addlike").addEventListener("click", function () {
     handleData(`http://api.laprudence.be/project2/v2/sprekers/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
   })
+
+  for (let talk of response.talks) {
+    console.log(talk.titel);
+    document.querySelector(".js-talks").innerHTML = ""
+    document.querySelector(".js-talks").innerHTML += `<div class="mb-2"><b>${name}</b>'s talks:</div>`
+    document.querySelector(".js-talks").innerHTML += `
+    <div class="d-flex">
+    <a href="session-detail.php?sessionid=${talk.id}" class="c-schedule__item d-flex flex-column me-4">
+        <p class="c-schedule__time">${talk.start}h</p>
+        <p class="c-schedule__speaker">${name}</p>
+        <p class="c-schedule__topic">${talk.titel}</p>
+    </a>
+    </div>`
+  }
 };
 
 document.addEventListener('DOMContentLoaded', function () {

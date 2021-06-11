@@ -198,6 +198,20 @@
 				autoplayTimeout: 5000,
 				nav: true,
 				dots: false,
+				responsive: {
+					0: {
+						items: 1,
+						mergeFit: true,
+						nav: false,
+					},
+					600: {
+						items: 2,
+						mergeFit: true,
+					},
+					1000: {
+						items: 3
+					}
+				}
 			});
 		});
 	</script>

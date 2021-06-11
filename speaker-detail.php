@@ -87,8 +87,10 @@
             </a>
             <p class="js-likes">11 likes</p>
           </div>
+          <div class="js-talks mb-4 d-flex flex-column">
+          </div>
           <div class="c-speaker__socials mb-5">
-            <p class="mb-2">Find <b class="js-speakernamesocial">Aral Balkan</b> on</p>
+            <p class="mb-2">Find <b>Aral Balkan</b> on</p>
             <div class="c-socials__buttons d-flex js-socials flex-wrap">
               <a href="#" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3">Facebook</a>
               <a href="#" class="c-btn c-btn--twitter py-2 px-5 w-auto js-twitter">Twitter</a>
@@ -109,6 +111,20 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+    <div class="toast c-toast__success" style="position: absolute; top: 0; right: 0;">
+      <div class="toast-header">
+        <strong class="mr-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Hello, world! This is a toast message.
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
