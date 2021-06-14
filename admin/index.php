@@ -1,10 +1,10 @@
 <?php
-session_start();
 require_once dirname(__FILE__) . "../../src/helper/debug.php";
 require_once dirname(__FILE__) . "../../src/helper/auth.php";
 require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
 checkLoggedin();
 //toon een overzicht van alle bestelde tickets
+$user = TicketsRepository::getUserByUsername($_SESSION["username"])
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,13 +34,13 @@ checkLoggedin();
                     <li class="c-nav__link px-3"><a href="../partners.php">Partners</a></li>
                     <li class="c-nav__link px-3"><a href="../contact.php">Contact</a></li>
                 </ul>
-                <a href="../bestel.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Buy tickets</a>
+                <a href="logout.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Log out</a>
             </div>
         </div>
         <div class="row mb-5">
             <div class="c-user d-flex align-items-center">
                 <img src="../img/pf.jpg" alt="Profile picture" class="c-user__img me-3">
-                <p class="text-white">Welcome back, <b>Lander Piessens</b></p>
+                <p class="text-white">Welcome back, <b><?php echo $user->first_name . " " . $user->last_name ?></b></p>
             </div>
         </div>
         <div class="row mb-5">

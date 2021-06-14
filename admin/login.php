@@ -1,6 +1,28 @@
 <?php
-session_start();
+require_once dirname(__FILE__) . "../../src/helper/debug.php";
+require_once dirname(__FILE__) . "../../src/helper/auth.php";
+require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
 //toon een overzicht van alle bestelde tickets
+
+if (isset($_SESSION["loggedin"])) {
+    header("location:index.php");
+}
+
+$error = "";
+if (isset($_POST['submit'])) {
+    $user = TicketsRepository::getUserByUsername($_POST["username"]);
+    if ($user) {
+        if (password_verify($_POST["password"], $user->pwd_hash)) {
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["loggedin"] = true;
+            header("location:index.php");
+        } else {
+            $error = "Fout wachtwoord";
+        }
+    } else {
+        $error = "Gebruiker niet gevonden.";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +49,13 @@ session_start();
                         <p>Don't have an account yet? Please contact the administrator.</p>
                     </div>
                     <div>
-                        <form action="index.php" method="POST" class="d-flex flex-column c-login__form">
+                        <form method="POST" class="d-flex flex-column c-login__form">
                             <input type="text" name="username" id="username" class="c-form__input c-form__input--text mb-3" placeholder="Username" required>
                             <input type="password" name="password" id="password" class="c-form__input c-form__input--text mb-3" placeholder="Password" required>
-                            <input type="submit" name="submit" id="submit" value="Log in" class="c-btn c-btn--pink py-2 px-5 text-center">
+                            <button type="submit" name="submit" id="submit" value="submit" class="c-btn c-btn--pink py-2 px-5 text-center">Log in</button>
                         </form>
-
                     </div>
+                    <?php echo $error ?>
                 </div>
             </div>
         </div>

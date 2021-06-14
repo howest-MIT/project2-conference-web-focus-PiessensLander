@@ -1,8 +1,11 @@
 <?php
-session_start();
 require_once dirname(__FILE__) . "../../src/helper/debug.php";
 require_once dirname(__FILE__) . "../../src/helper/auth.php";
 require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
+
+if (isset($_SESSION["loggedin"])) {
+    header("location:index.php");
+}
 
 //toon een overzicht van alle bestelde tickets
 ?>
@@ -27,8 +30,7 @@ require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
             <div class="col-12 col-md-8 col-lg-6 col-xl-3">
                 <div class="c-login p-4">
                     <div class="c-login__header mb-4">
-                        <h1 class="mb-2">Log in</h1>
-                        <p>Don't have an account yet? Please contact the administrator.</p>
+                        <h1 class="mb-2">Sign up</h1>
                     </div>
                     <div>
                         <form action="register-validate.php" method="POST" class="d-flex flex-column c-login__form">

@@ -10,4 +10,10 @@ class TicketsRepository
         $res = Database::execute("INSERT INTO users(username,first_name,last_name,pwd_hash) VALUES (?,?,?,?)", [$username, $first_name, $last_name, $password], "User");
         return $res;
     }
+
+    public static function getUserByUsername($username)
+    {
+        $item = Database::getSingleRow("SELECT * FROM users WHERE username=?", [$username], "User");
+        return $item;
+    }
 }
