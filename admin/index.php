@@ -23,21 +23,38 @@ $latestOrders = TicketsRepository::getLatestOrders();
 </head>
 
 <body>
-    <div class="bg" style="height: 35vh"></div>
+    <div class="bg" style="height: 30vh"></div>
     <div class="container">
-        <div class="row py-4 mb-5">
-            <div class="c-nav d-flex justify-content-between align-items-center">
-                <img src="../img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
-                <ul class="c-nav__items d-flex justify-content-center">
-                    <li class="c-nav__link px-3"><a href="../index.php">Home</a></li>
-                    <li class="c-nav__link px-3"><a href="../schedule.php">Program</a></li>
-                    <li class="c-nav__link px-3"><a href="../speakers.php">Speakers</a></li>
-                    <li class="c-nav__link px-3"><a href="../partners.php">Partners</a></li>
-                    <li class="c-nav__link px-3"><a href="../contact.php">Contact</a></li>
-                </ul>
-                <a href="logout.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Log out</a>
+        <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
+            <div class="container-fluid m-0 p-0">
+                <a class="navbar-brand w-auto c-nav__logo" href="#">
+                    <img src="../img/logo_fw.png" alt="Logo" class="w-100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                            <a class="active" href="../index.php">Home</a>
+                        </li>
+                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                            <a href="../schedule.php">Program</a>
+                        </li>
+                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                            <a href="../speakers.php">Speakers</a>
+                        </li>
+                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                            <a href="../partners.php">Partners</a>
+                        </li>
+                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                            <a href="../contact.php">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
+                </div>
             </div>
-        </div>
+        </nav>
         <div class="row mb-5">
             <div class="c-user d-flex align-items-center">
                 <img src="../img/pf.jpg" alt="Profile picture" class="c-user__img me-3">
@@ -114,7 +131,6 @@ $latestOrders = TicketsRepository::getLatestOrders();
                                 <td class="d-flex w-100"><?php echo $order->order_date ?></td>
                                 <td class="d-flex w-100">
                                     <div>
-
                                         <a href="edit-order.php?orderid=<?php echo $order->orderID ?>" class="c-btn c-btn--pink py-2 px-5 text-center">Details</a>
                                     </div>
                                 </td>
@@ -123,8 +139,7 @@ $latestOrders = TicketsRepository::getLatestOrders();
                     </tbody>
                 </table>
                 <div class="c-table__all d-flex justify-content-center">
-                    <a href="#" class="c-btn c-btn--pink py-2 px-5 w-auto" data-bs-toggle="modal" data-bs-target="#warningModal">View all orders</a>
-
+                    <a href="orders.php" class="c-btn c-btn--pink py-2 px-5 w-auto">View all orders</a>
                 </div>
             </div>
             <div class="col-sm-12 col-lg-5">

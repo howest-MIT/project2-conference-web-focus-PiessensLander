@@ -38,7 +38,19 @@ class TicketsRepository
 
     public static function getOrderById($id)
     {
-        $arr = Database::execute("SELECT * FROM orders WHERE orderID=?", [$id], "Order");
-        return $arr;
+        $item = Database::getRows("SELECT * FROM orders WHERE orderID=?", [$id], "Order");
+        return $item;
+    }
+
+    public static function updateOrder($name, $email, $phone, $early_bird, $student, $group_ticket, $id)
+    {
+        $int = Database::execute("UPDATE orders SET name=?,email=?,phone=?,early_bird=?,student=?,group_ticket=? WHERE orderID=?", [$name, $email, $phone, $early_bird, $student, $group_ticket, $id]);
+        return $int;
+    }
+
+    public static function deleteOrder($id)
+    {
+        $int = Database::execute("DELETE FROM orders WHERE orderID=?", [$id]);
+        return $int;
     }
 }
