@@ -6,10 +6,10 @@ class Database
     private static function getConnection()
     {
         // set up for using PDO
-        $user = '********';
-        $pass = '*********';
-        $host = '***********';
-        $db_name = '**********';
+        $user = "root";
+        $pass = "";
+        $host = "localhost";
+        $db_name = "project2";
         // set up DSN
         $dsn = "mysql:host=$host;dbname=$db_name";
         $db = new PDO($dsn, $user, $pass);
@@ -32,7 +32,6 @@ class Database
 
         $conn = null;
         return $rows;
-
     }
 
     public static function getSingleRow($sql, $params = [], $type = null)
@@ -59,6 +58,4 @@ class Database
         $aantalRijen = $stmt->rowCount();
         return $aantalRijen;
     }
-
 }
-?>

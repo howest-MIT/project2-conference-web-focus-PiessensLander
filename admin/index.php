@@ -1,4 +1,9 @@
 <?php
+session_start();
+require_once dirname(__FILE__) . "../../src/helper/debug.php";
+require_once dirname(__FILE__) . "../../src/helper/auth.php";
+require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
+checkLoggedin();
 //toon een overzicht van alle bestelde tickets
 ?>
 <!DOCTYPE html>
