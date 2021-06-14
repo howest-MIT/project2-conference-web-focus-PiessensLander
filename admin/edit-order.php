@@ -1,5 +1,15 @@
 <?php
 //
+require_once dirname(__FILE__) . "../../src/helper/auth.php";
+require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
+checkLoggedin();
+if (isset($_GET["orderid"])) {
+    $order = TicketsRepository::getOrderById($_GET["orderid"]);
+    print_r($order);
+} else {
+    header("location:index.php");
+}
+
 ?>
 
 
@@ -36,7 +46,7 @@
         </div>
         <div class="row mb-3">
             <div class="c-title c-title--white p-4 mb-5 d-flex flex-row align-items-center justify-content-between">
-                <h2>Edit order - #0001</h2>
+                <h2>Edit order - #<?php echo $order->orderID ?></h2>
             </div>
         </div>
         <div class="c-back d-flex mb-5">

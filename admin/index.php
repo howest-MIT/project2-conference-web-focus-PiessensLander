@@ -4,7 +4,8 @@ require_once dirname(__FILE__) . "../../src/helper/auth.php";
 require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
 checkLoggedin();
 //toon een overzicht van alle bestelde tickets
-$user = TicketsRepository::getUserByUsername($_SESSION["username"])
+$user = TicketsRepository::getUserByUsername($_SESSION["username"]);
+$latestOrders = TicketsRepository::getLatestOrders();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,60 +99,27 @@ $user = TicketsRepository::getUserByUsername($_SESSION["username"])
                 <h3 class="text-pink mb-3">Recent orders</h3>
                 <table class="table table-hover c-table">
                     <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Order date</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Actions</th>
+                        <tr class="d-flex">
+                            <th class="d-flex w-100" scope="col">ID</th>
+                            <th class="d-flex w-100" scope="col">Name</th>
+                            <th class="d-flex w-100" scope="col">Order date</th>
+                            <th class="d-flex w-100" scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">#0001</th>
-                            <td>John Doe</td>
-                            <td>01/06/2021</td>
-                            <td>Student</td>
-                            <td>
-                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">#0002</th>
-                            <td>John Doe</td>
-                            <td>01/06/2021</td>
-                            <td>Student</td>
-                            <td>
-                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">#0003</th>
-                            <td>John Doe</td>
-                            <td>01/06/2021</td>
-                            <td>Student</td>
-                            <td>
-                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">#0004</th>
-                            <td>John Doe</td>
-                            <td>01/06/2021</td>
-                            <td>Student</td>
-                            <td>
-                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">#0005</th>
-                            <td>John Doe</td>
-                            <td>01/06/2021</td>
-                            <td>Student</td>
-                            <td>
-                                <a href="edit-order.php" class="c-btn c-btn--pink py-2 px-5">Details</a>
-                            </td>
-                        </tr>
+                        <?php foreach ($latestOrders as $order) { ?>
+                            <tr class="d-flex">
+                                <th class="d-flex w-100" scope="row"><?php echo $order->orderID ?></th>
+                                <td class="d-flex w-100"><?php echo $order->name ?></td>
+                                <td class="d-flex w-100"><?php echo $order->order_date ?></td>
+                                <td class="d-flex w-100">
+                                    <div>
+
+                                        <a href="edit-order.php?orderid=<?php echo $order->orderID ?>" class="c-btn c-btn--pink py-2 px-5 text-center">Details</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
                 <div class="c-table__all d-flex justify-content-center">

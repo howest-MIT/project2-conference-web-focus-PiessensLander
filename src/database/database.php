@@ -6,10 +6,10 @@ class Database
     private static function getConnection()
     {
         // set up for using PDO
-        $user = "root";
-        $pass = "";
-        $host = "localhost";
-        $db_name = "project2";
+        $user = "ID293913_project2";
+        $pass = "stZS5GLqgJpMMZtl";
+        $host = "ID293913_project2.db.webhosting.be";
+        $db_name = "ID293913_project2";
         // set up DSN
         $dsn = "mysql:host=$host;dbname=$db_name";
         $db = new PDO($dsn, $user, $pass);
