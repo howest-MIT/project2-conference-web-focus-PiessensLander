@@ -54,14 +54,6 @@
     <div class="row">
       <div class="c-title c-title--white p-4 d-flex flex-row align-items-center justify-content-between flex-wrap">
         <h2 class="mb-3 mb-md-0">All speakers</h2>
-        <div class="c-title__filter d-flex flex-row">
-          <p class="me-3">Order by:</p>
-          <select name="speaker_filter" id="speaker_filter">
-            <option value="most_popular">Most popular</option>
-            <option value="alphabetical"> Alphabetical (A-Z)</option>
-            <option value="likes"> Most likes</option>
-          </select>
-        </div>
       </div>
     </div>
     <div class="row d-flex mb-5 flex-wrap js-speakers">
@@ -83,8 +75,8 @@
   </footer>
   </div>
   <script>
-    
-    
+
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

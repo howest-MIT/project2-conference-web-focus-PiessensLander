@@ -6,6 +6,14 @@ checkLoggedin();
 //toon een overzicht van alle bestelde tickets
 $user = TicketsRepository::getUserByUsername($_SESSION["username"]);
 $latestOrders = TicketsRepository::getLatestOrders();
+
+$aantal_earlybird = TicketsRepository::getEarlyBirdAmount();
+$aantal_student = TicketsRepository::getStudentAmount();
+$aantal_group = TicketsRepository::getGroupAmount();
+
+$total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45) + ($aantal_group->aantal * 89);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,19 +44,10 @@ $latestOrders = TicketsRepository::getLatestOrders();
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto ">
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a class="active" href="../index.php">Home</a>
+                            <a class="active" href="index.php">Home</a>
                         </li>
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../schedule.php">Program</a>
-                        </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../speakers.php">Speakers</a>
-                        </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../partners.php">Partners</a>
-                        </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../contact.php">Contact</a>
+                            <a href="orders.php">Orders</a>
                         </li>
                     </ul>
                     <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
@@ -68,10 +67,9 @@ $latestOrders = TicketsRepository::getLatestOrders();
                         <i class="fas fa-euro-sign c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
                         <div class="c-stat__detail">
                             <p>Total sales</p>
-                            <p class="fs-2 text-pink">€123,45</p>
+                            <p class="fs-2 text-pink">€<?php echo $total_sales ?></p>
                         </div>
                     </div>
-                    <a href="#"><i class="fas fa-external-link-square-alt fs-4"></i></a>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3">
@@ -80,10 +78,9 @@ $latestOrders = TicketsRepository::getLatestOrders();
                         <i class="fas fa-ticket-alt c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
                         <div class="c-stat__detail">
                             <p>Early Bird tickets</p>
-                            <p class="fs-2 text-pink">2</p>
+                            <p class="fs-2 text-pink"><?php echo $aantal_earlybird->aantal ?></p>
                         </div>
                     </div>
-                    <a href="#"><i class="fas fa-external-link-square-alt fs-4"></i></a>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3">
@@ -92,10 +89,9 @@ $latestOrders = TicketsRepository::getLatestOrders();
                         <i class="fas fa-ticket-alt c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
                         <div class="c-stat__detail">
                             <p>Student tickets</p>
-                            <p class="fs-2 text-pink">5</p>
+                            <p class="fs-2 text-pink"><?php echo $aantal_student->aantal ?></p>
                         </div>
                     </div>
-                    <a href="#"><i class="fas fa-external-link-square-alt fs-4"></i></a>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-3">
@@ -104,10 +100,9 @@ $latestOrders = TicketsRepository::getLatestOrders();
                         <i class="fas fa-ticket-alt c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
                         <div class="c-stat__detail">
                             <p>Group tickets</p>
-                            <p class="fs-2 text-pink">3</p>
+                            <p class="fs-2 text-pink"><?php echo $aantal_group->aantal ?></p>
                         </div>
                     </div>
-                    <a href="#"><i class="fas fa-external-link-square-alt fs-4"></i></a>
                 </div>
             </div>
         </div>
@@ -162,7 +157,7 @@ $latestOrders = TicketsRepository::getLatestOrders();
             data: {
                 labels: ['Student', 'Group', 'Early Bird'],
                 datasets: [{
-                    data: [5, 3, 2],
+                    data: [<?php echo $aantal_student->aantal ?>, <?php echo $aantal_group->aantal ?>, <?php echo $aantal_earlybird->aantal ?>],
                     backgroundColor: [
                         'rgb(197, 72, 147)',
                         'rgb(149, 0, 91)',

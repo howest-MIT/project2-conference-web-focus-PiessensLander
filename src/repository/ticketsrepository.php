@@ -3,6 +3,7 @@
 require_once dirname(__FILE__) . "/../database/database.php";
 require_once dirname(__FILE__) . "/../model/user.php";
 require_once dirname(__FILE__) . "/../model/order.php";
+require_once dirname(__FILE__) . "/../model/aantal.php";
 
 class TicketsRepository
 {
@@ -51,6 +52,22 @@ class TicketsRepository
     public static function deleteOrder($id)
     {
         $int = Database::execute("DELETE FROM orders WHERE orderID=?", [$id]);
+        return $int;
+    }
+
+    public static function getEarlyBirdAmount()
+    {
+        $int = Database::getSingleRow("SELECT SUM(early_bird) as 'aantal' FROM orders", null, "Aantal");
+        return $int;
+    }
+    public static function getStudentAmount()
+    {
+        $int = Database::getSingleRow("SELECT SUM(student) as 'aantal' FROM orders", null, "Aantal");
+        return $int;
+    }
+    public static function getGroupAmount()
+    {
+        $int = Database::getSingleRow("SELECT SUM(group_ticket) as 'aantal' FROM orders", null, "Aantal");
         return $int;
     }
 }
