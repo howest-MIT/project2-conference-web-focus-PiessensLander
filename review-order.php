@@ -12,19 +12,23 @@ if (isset($_POST["submit"])) {
         if ($_POST["amount-earlybird"] == "") {
             $amount_earlybird = 0;
         } else {
-            $amount_earlybird = 0;
+            $amount_earlybird = $_POST["amount-earlybird"];
         }
         if ($_POST["amount-student"] == "") {
             $amount_student = 0;
         } else {
-            $amount_student = 0;
+            $amount_student = $_POST["amount-student"];
         }
         if ($_POST["amount-group"] == "") {
             $amount_group = 0;
         } else {
-            $amount_group = 0;
+            $amount_group = $_POST["amount-group"];
         }
         TicketsRepository::createOrder($_POST["fullname"], $_POST["email"], $_POST["phone"], $amount_earlybird, $amount_student, $amount_group);
+        $total_earlybird = 99 * $amount_earlybird;
+        $total_student = 45 * $amount_student;
+        $total_group = 89 * $amount_group;
+        $subtotal = $total_earlybird + $total_group + $total_student;
     } else {
         $error = "Not all required fields were filled.";
     }
@@ -101,8 +105,8 @@ if (isset($_POST["submit"])) {
                 </div>
                 <div class="c-order__total mb-5">
                     <div class="c-order__amount d-flex justify-content-between py-2">
-                        <p>Subtotal</p>
-                        <p>€32</p>
+                        <p><b>Subtotal</b></p>
+                        <p><b>€<?php echo $subtotal ?></b></p>
                     </div>
                 </div>
             </div>

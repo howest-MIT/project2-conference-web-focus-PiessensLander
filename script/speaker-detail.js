@@ -8,7 +8,7 @@ let getSpeakerId = function () {
   const html_placeholder = document.querySelector('.js-placeholder');
 
   if (speakerId) {
-    handleData(`http://api.laprudence.be/project2/v2/sprekers/${speakerId}`, speakerDetails);
+    handleData(`https://api.laprudence.be/project2/v2/sprekers/${speakerId}`, speakerDetails);
   } else {
     html_placeholder.innerHTML = 'De querystring ontbreekt';
     console.log('De querystring ontbreekt');
@@ -61,7 +61,7 @@ const speakerDetails = function (response) {
   }
 
   document.querySelector(".js-addlike").addEventListener("click", function () {
-    handleData(`http://api.laprudence.be/project2/v2/sprekers/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+    handleData(`https://api.laprudence.be/project2/v2/sprekers/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
   })
 
   for (let talk of response.talks) {

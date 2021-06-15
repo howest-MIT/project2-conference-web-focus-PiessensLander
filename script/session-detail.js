@@ -5,7 +5,7 @@ const getSessionId = function () {
   const sessionId = urlParams.get('sessionid');
 
   if (sessionId) {
-    handleData(`http://api.laprudence.be/project2/v2/talks/${sessionId}`, sessionDetails);
+    handleData(`https://api.laprudence.be/project2/v2/talks/${sessionId}`, sessionDetails);
   } else {
     console.log('De querystring ontbreekt');
   }
@@ -59,7 +59,7 @@ const sessionDetails = function (response) {
   document.querySelector(".js-img").src = `img/${image}`
 
   document.querySelector(".js-addlike").addEventListener("click", function () {
-    handleData(`http://api.laprudence.be/project2/v2/talks/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+    handleData(`https://api.laprudence.be/project2/v2/talks/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
   })
 };
 
