@@ -4,7 +4,6 @@ const handleData = function (url, callback, method = "GET", body = null, authTok
             body: body,
             headers: {
                 "content-type": "application/json",
-                Authorization: "Bearer " + authToken,
             },
         })
         .then(function (response) {

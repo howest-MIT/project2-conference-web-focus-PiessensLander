@@ -5,15 +5,7 @@ require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
 checkLoggedin();
 //toon een overzicht van alle bestelde tickets
 $user = TicketsRepository::getUserByUsername($_SESSION["username"]);
-$latestOrders = TicketsRepository::getLatestOrders();
-
-$aantal_earlybird = TicketsRepository::getEarlyBirdAmount();
-$aantal_student = TicketsRepository::getStudentAmount();
-$aantal_group = TicketsRepository::getGroupAmount();
-
-$total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45) + ($aantal_group->aantal * 89);
-
-
+$orders = TicketsRepository::getAllOrders();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,10 +36,10 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto ">
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a class="active" href="index.php">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="orders.php">Orders</a>
+                            <a href="orders.php" class="active">Orders</a>
                         </li>
                     </ul>
                     <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
@@ -55,60 +47,17 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
             </div>
         </nav>
         <div class="row mb-5">
-            <div class="c-user d-flex align-items-center">
+            <div class="c-user d-flex align-items-center py-5">
                 <img src="../img/pf.jpg" alt="Profile picture" class="c-user__img me-3">
                 <p class="text-white">Welcome back, <b><?php echo $user->first_name . " " . $user->last_name ?></b></p>
             </div>
         </div>
-        <div class="row mb-5">
-            <div class="col-sm-6 col-lg-3">
-                <div class="c-stat d-flex p-3 justify-content-between align-items-center mb-3 mb-lg-0">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-euro-sign c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
-                        <div class="c-stat__detail">
-                            <p>Total sales</p>
-                            <p class="fs-2 text-pink">€<?php echo $total_sales ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="c-stat d-flex p-3 justify-content-between align-items-center">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-ticket-alt c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
-                        <div class="c-stat__detail">
-                            <p>Early Bird tickets</p>
-                            <p class="fs-2 text-pink"><?php echo $aantal_earlybird->aantal ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="c-stat d-flex p-3 justify-content-between align-items-center">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-ticket-alt c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
-                        <div class="c-stat__detail">
-                            <p>Student tickets</p>
-                            <p class="fs-2 text-pink"><?php echo $aantal_student->aantal ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="c-stat d-flex p-3 justify-content-between align-items-center">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-ticket-alt c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
-                        <div class="c-stat__detail">
-                            <p>Group tickets</p>
-                            <p class="fs-2 text-pink"><?php echo $aantal_group->aantal ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row">
-            <div class="col-sm-12 col-lg-7">
-                <h3 class="text-pink mb-3">Recent orders</h3>
+            <div class="c-back d-flex mb-5">
+                <a href="index.php" class="c-btn c-btn--pink py-2 px-5 w-auto"><i class="fas fa-long-arrow-alt-left me-3"></i>Go back</a>
+            </div>
+            <div class="col-12">
+                <h3 class="text-pink mb-3">All orders</h3>
                 <table class="table table-hover c-table">
                     <thead>
                         <tr class="d-flex">
@@ -119,13 +68,14 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($latestOrders as $order) { ?>
+                        <?php foreach ($orders as $order) { ?>
                             <tr class="d-flex">
                                 <th class="d-flex w-100" scope="row"><?php echo $order->orderID ?></th>
                                 <td class="d-flex w-100"><?php echo $order->name ?></td>
                                 <td class="d-flex w-100"><?php echo $order->order_date ?></td>
                                 <td class="d-flex w-100">
                                     <div>
+
                                         <a href="edit-order.php?orderid=<?php echo $order->orderID ?>" class="c-btn c-btn--pink py-2 px-5 text-center">Details</a>
                                     </div>
                                 </td>
@@ -133,17 +83,6 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
                         <?php } ?>
                     </tbody>
                 </table>
-                <div class="c-table__all d-flex justify-content-center mb-5 mb-lg-0">
-                    <a href="orders.php" class="c-btn c-btn--pink py-2 px-5 w-auto">View all orders</a>
-                </div>
-            </div>
-            <div class="col-sm-12 col-lg-5">
-                <canvas id="sales" class="c-graph p-3" width="400" height="400">
-                    <div class="c-graph__title d-flex align-items-center flex-column">
-                        <h2 class="text-pink">10</h2>
-                        <p>tickets sold</p>
-                    </div>
-                </canvas>
             </div>
         </div>
     </div>
@@ -157,7 +96,7 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
             data: {
                 labels: ['Student', 'Group', 'Early Bird'],
                 datasets: [{
-                    data: [<?php echo $aantal_student->aantal ?>, <?php echo $aantal_group->aantal ?>, <?php echo $aantal_earlybird->aantal ?>],
+                    data: [5, 3, 2],
                     backgroundColor: [
                         'rgb(197, 72, 147)',
                         'rgb(149, 0, 91)',

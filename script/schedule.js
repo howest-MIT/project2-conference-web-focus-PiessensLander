@@ -2,7 +2,7 @@
 
 const getTalks = function (response) {
     for (let i of response) {
-        handleData(`http://api.laprudence.be/project2/v2/zalen/${i.id}/talks`, processTalks);
+        handleData(`https://api.laprudence.be/project2/v2/zalen/${i.id}/talks`, processTalks);
     }
 };
 
@@ -166,5 +166,5 @@ const processTalks = function (response) {
 
 document.addEventListener('DOMContentLoaded', function () {
     console.info('DOM geladen');
-    handleData("http://api.laprudence.be/project2/v2/zalen", getTalks);
+    handleData("https://api.laprudence.be/project2/v2/zalen", getTalks);
 });

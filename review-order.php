@@ -1,6 +1,41 @@
 <?php
 //
-print_r($_POST)
+
+require_once dirname(__FILE__) . "/src/repository/ticketsrepository.php";
+
+$amount_earlybird = 0;
+$amount_student = 0;
+$amount_group = 0;
+
+if (isset($_POST["submit"])) {
+    if (isset($_POST["fullname"]) && isset($_POST["email"]) && isset($_POST["phone"])) {
+        if ($_POST["amount-earlybird"] == "") {
+            $amount_earlybird = 0;
+        } else {
+            $amount_earlybird = $_POST["amount-earlybird"];
+        }
+        if ($_POST["amount-student"] == "") {
+            $amount_student = 0;
+        } else {
+            $amount_student = $_POST["amount-student"];
+        }
+        if ($_POST["amount-group"] == "") {
+            $amount_group = 0;
+        } else {
+            $amount_group = $_POST["amount-group"];
+        }
+        TicketsRepository::createOrder($_POST["fullname"], $_POST["email"], $_POST["phone"], $amount_earlybird, $amount_student, $amount_group);
+        $total_earlybird = 99 * $amount_earlybird;
+        $total_student = 45 * $amount_student;
+        $total_group = 89 * $amount_group;
+        $subtotal = $total_earlybird + $total_group + $total_student;
+    } else {
+        $error = "Not all required fields were filled.";
+    }
+} else {
+    header("location:bestel.php");
+}
+
 ?>
 
 
@@ -20,19 +55,19 @@ print_r($_POST)
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto ">
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
                             <a href="index.php">Home</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
                             <a href="schedule.php">Program</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
                             <a href="speakers.php">Speakers</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
                             <a href="partners.php">Partners</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link c-nav__link--light px-3 mb-3 mb-lg-0">
                             <a href="contact.php">Contact</a>
                         </li>
                     </ul>
@@ -42,25 +77,38 @@ print_r($_POST)
         </nav>
         <div class="row mb-3">
             <div class="c-title c-title--pink p-4 mb-5 d-flex flex-row align-items-center justify-content-between">
-                <h2>Review your order</h2>
+                <h2>Your order is confirmed!</h2>
             </div>
         </div>
         <div class="row mb-5">
             <div class="c-order col-12 col-lg-6 p-4">
                 <p class="mb-3"><b>Order summary</b></p>
                 <div class="c-order__overview">
-                    <div class="c-order__amount d-flex justify-content-between py-2">
-                        <p>2x Early Bird ticket</p>
-                        <p>€32</p>
-                    </div>
+                    <?php if ($_POST["amount-earlybird"] !== "") { ?>
+                        <div class="c-order__amount d-flex justify-content-between py-2">
+                            <p><?php echo $_POST["amount-earlybird"] ?>x Early Bird ticket</p>
+                            <p>€<?php echo 99 * $_POST["amount-earlybird"] ?></p>
+                        </div>
+                    <?php } ?>
+                    <?php if ($_POST["amount-student"] !== "") { ?>
+                        <div class="c-order__amount d-flex justify-content-between py-2">
+                            <p><?php echo $_POST["amount-student"] ?>x Student ticket</p>
+                            <p>€<?php echo 45 * $_POST["amount-student"] ?></p>
+                        </div>
+                    <?php } ?>
+                    <?php if ($_POST["amount-group"] !== "") { ?>
+                        <div class="c-order__amount d-flex justify-content-between py-2">
+                            <p><?php echo $_POST["amount-group"] ?>x Group ticket</p>
+                            <p>€<?php echo 89 * $_POST["amount-group"] ?></p>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="c-order__total mb-5">
                     <div class="c-order__amount d-flex justify-content-between py-2">
-                        <p>Subtotal</p>
-                        <p>€32</p>
+                        <p><b>Subtotal</b></p>
+                        <p><b>€<?php echo $subtotal ?></b></p>
                     </div>
                 </div>
-                <button type="submit" class="c-btn c-btn--pink py-2 px-5 w-auto">Complete order</button>
             </div>
         </div>
     </div>

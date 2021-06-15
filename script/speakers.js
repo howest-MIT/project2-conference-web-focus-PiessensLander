@@ -49,12 +49,11 @@ const getSpeakers = function (response) {
           </div>
         </div>
       </div>`;
-
     // Add like
     let arrLikeBtn = document.querySelectorAll(".js-addlike");
     for (let btn of arrLikeBtn) {
       btn.addEventListener("click", function () {
-        handleData(`http://api.laprudence.be/project2/v2/sprekers/${btn.dataset.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+        handleData(`https://api.laprudence.be/project2/v2/sprekers/${btn.dataset.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
       })
     }
   };
@@ -86,7 +85,7 @@ const getSpeakers = function (response) {
       i.classList.toggle("c-pagination__pages--active");
     }
     i.addEventListener("click", function () {
-      handleData(`http://api.laprudence.be/project2/v2/sprekers?page=${i.dataset.page}`, getSpeakers)
+      handleData(`https://api.laprudence.be/project2/v2/sprekers?page=${i.dataset.page}`, getSpeakers)
     })
   }
 
@@ -115,5 +114,5 @@ function truncateText(zin, maxLength) {
 
 document.addEventListener('DOMContentLoaded', function () {
   console.info('DOM geladen');
-  handleData("http://api.laprudence.be/project2/v2/sprekers", getSpeakers)
+  handleData("https://api.laprudence.be/project2/v2/sprekers", getSpeakers)
 });

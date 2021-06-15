@@ -1,5 +1,21 @@
 <?php
 //
+require_once dirname(__FILE__) . "../../src/helper/auth.php";
+require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
+checkLoggedin();
+if (isset($_GET["orderid"])) {
+    $order = TicketsRepository::getOrderById($_GET["orderid"]);
+} else {
+    header("location:index.php");
+}
+
+if (isset($_GET["action"])) {
+    if ($_GET["action"] == "delete") {
+        TicketsRepository::deleteOrder($_GET["orderid"]);
+        header("location:index.php");
+    }
+}
+
 ?>
 
 
@@ -21,28 +37,36 @@
 <body>
     <div class="bg" style="height: 20vh;"></div>
     <div class="container">
-        <div class="row py-4 mb-5">
-            <div class="c-nav d-flex justify-content-between align-items-center">
-                <img src="../img/logo_fw.png" alt="Multi-Mania Logo" class="c-nav__logo">
-                <ul class="c-nav__items d-flex justify-content-center">
-                    <li class="c-nav__link px-3"><a href="../index.php">Home</a></li>
-                    <li class="c-nav__link px-3"><a href="../schedule.php">Program</a></li>
-                    <li class="c-nav__link px-3"><a href="../speakers.php">Speakers</a></li>
-                    <li class="c-nav__link px-3"><a href="../partners.php">Partners</a></li>
-                    <li class="c-nav__link px-3"><a href="../contact.php">Contact</a></li>
-                </ul>
-                <a href="../bestel.php" class="c-btn c-btn--outline py-2 px-5 w-auto">Buy tickets</a>
+        <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
+            <div class="container-fluid m-0 p-0">
+                <a class="navbar-brand w-auto c-nav__logo" href="#">
+                    <img src="../img/logo_fw.png" alt="Logo" class="w-100">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                            <a href="orders.php" class="active">Orders</a>
+                        </li>
+                    </ul>
+                    <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
+                </div>
             </div>
-        </div>
+        </nav>
         <div class="row mb-3">
             <div class="c-title c-title--white p-4 mb-5 d-flex flex-row align-items-center justify-content-between">
-                <h2>Edit order - #0001</h2>
+                <h2>Edit order - #<?php echo $order[0]->orderID ?></h2>
             </div>
         </div>
         <div class="c-back d-flex mb-5">
-            <a href="#" class="c-btn c-btn--pink py-2 px-5 w-auto" onclick="history.back(-1)"><i class="fas fa-long-arrow-alt-left me-3"></i>Go back</a>
+            <a href="index.php" class="c-btn c-btn--pink py-2 px-5 w-auto"><i class="fas fa-long-arrow-alt-left me-3"></i>Go back</a>
         </div>
-        <form class="c-booking mb-5" method="POST" action="review-order.php">
+        <form class="c-booking mb-5" method="POST" action="edit-order-validate.php">
             <div class="row">
                 <div class="col-sm-12 col-lg-4 mb-sm-3 mb-0">
                     <p class="c-booking__step">Personal information</p>
@@ -51,27 +75,32 @@
                     <p class="c-booking__step">Select type and amount</p>
                 </div>
                 <div class="col-sm-12 col-lg-4 mb-sm-3 mb-0">
-                    <div class="c-booking__step">
-                        <button type="submit" class="c-btn c-btn--pink py-2 px-5 w-auto">Complete order</button>
-                        <p class="text-grey">You can review your order before payment</p>
+                    <div class="c-booking__step d-flex">
+                        <button type="submit" name="submit" class="c-btn c-btn--pink py-2 px-5 w-auto me-3">Update order</button>
+                        <div class="d-flex">
+                            <a class="c-btn c-btn--warning py-2 px-5 w-auto" data-bs-toggle="modal" data-bs-target="#warningModal">Delete order</a>
+                        </div>
+
                     </div>
                 </div>
-
-
             </div>
             <div class="row">
                 <div class="col-sm-12 col-lg-4 mb-sm-3 mb-0">
                     <div class="c-booking__input d-flex flex-column mb-4">
+                        <label for="fullname" class="mb-2">Order ID</label>
+                        <input type="text" name="id" class="c-booking__input--text" placeholder="ID" required readonly value="<?php echo $order[0]->orderID ?>" />
+                    </div>
+                    <div class="c-booking__input d-flex flex-column mb-4">
                         <label for="fullname" class="mb-2">Full name</label>
-                        <input type="text" name="fullname" class="c-booking__input--text" placeholder="Full name" required />
+                        <input type="text" name="fullname" class="c-booking__input--text" placeholder="Full name" required value="<?php echo $order[0]->name ?>" />
                     </div>
                     <div class="c-booking__input d-flex flex-column mb-4">
                         <label for="email" class="mb-2">E-mail address</label>
-                        <input type="email" name="email" class="c-booking__input--text" placeholder="E-mail address" required />
+                        <input type="email" name="email" class="c-booking__input--text" placeholder="E-mail address" required value="<?php echo $order[0]->email ?>" />
                     </div>
                     <div class="c-booking__input d-flex flex-column">
                         <label for="phone" class="mb-2">Phone</label>
-                        <input type="phone" name="phone" class="c-booking__input--text" placeholder="Phone" required />
+                        <input type="phone" name="phone" class="c-booking__input--text" placeholder="Phone" required value="<?php echo $order[0]->phone ?>" />
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-4 mb-sm-3 mb-0">
@@ -89,7 +118,7 @@
                                 </div>
                             </div>
                             <div class="c-booking__amount d-flex justify-content-center">
-                                <input type="number" id="amount-earlybird" name="amount-earlybird" class="c-booking__input--amount" min="1">
+                                <input type="number" id="amount-earlybird" name="amount-earlybird" class="c-booking__input--amount" min=0 value="<?php echo $order[0]->early_bird ?>">
                             </div>
                         </div>
                     </div>
@@ -107,7 +136,7 @@
                                 </div>
                             </div>
                             <div class="c-booking__amount d-flex">
-                                <input type="number" id="amount-student" name="amount-student" class="c-booking__input--amount" min="1">
+                                <input type="number" id="amount-student" name="amount-student" class="c-booking__input--amount" min=0 value="<?php echo $order[0]->student ?>">
                             </div>
                         </div>
                     </div>
@@ -125,12 +154,9 @@
                                 </div>
                             </div>
                             <div class="c-booking__amount d-flex justify-content-center">
-                                <input type="number" id="amount-group" name="amount-group" class="c-booking__input--amount" min="6">
+                                <input type="number" id="amount-group" name="amount-group" class="c-booking__input--amount" min=0 value="<?php echo $order[0]->group_ticket ?>">
                             </div>
                         </div>
-                    </div>
-                    <div class="row d-flex justify-content-end mt-5">
-                        <button type="button" class="c-btn c-btn--warning py-2 px-5 w-auto" data-bs-toggle="modal" data-bs-target="#warningModal">Delete order</button>
                     </div>
                 </div>
             </div>
@@ -154,7 +180,7 @@
                     <p>This action cannot be reversed.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="c-btn c-btn--pink py-2 px-5 border-0" data-bs-dismiss="modal">Yes</button>
+                    <a href="?action=delete&orderid=<?php echo $order[0]->orderID ?>" class="c-btn c-btn--pink py-2 px-5 border-0 text-center">Yes</a>
                     <button type="button" class="c-btn c-btn--outline py-2 px-5">No</button>
                 </div>
             </div>

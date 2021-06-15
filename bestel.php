@@ -1,5 +1,7 @@
 <?php
-//
+
+require_once dirname(__FILE__) . "/src/repository/ticketsrepository.php";
+
 ?>
 
 
@@ -54,8 +56,7 @@
                 </div>
                 <div class="col-sm-12 col-lg-4 mb-sm-3 mb-0">
                     <div class="c-booking__step">
-                        <button type="submit" class="c-btn c-btn--pink py-2 px-5 w-auto">Complete order</button>
-                        <p class="text-grey">You can review your order before payment</p>
+                        <button type="submit" value="submit" name="submit" class="c-btn c-btn--pink py-2 px-5 w-auto">Complete order</button>
                     </div>
                 </div>
 

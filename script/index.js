@@ -44,7 +44,7 @@ const getSpeakers = function (response) {
             <p class="js-desciption">${truncateText(response.data[i].bio.eng,200)}</p>
           </div>
           <div class="c-card__footer d-flex flex-wrap justify-content-between gap-2">
-            <a href="#" class="c-btn c-btn--outline js-addlike py-2 px-4 text-center w-auto mb-3 flex-grow-1" data-id="${response.data[i].id}">
+            <a class="c-btn c-btn--outline js-addlike py-2 px-4 text-center w-auto mb-3 flex-grow-1" data-id="${response.data[i].id}">
               <i class="far fa-heart me-2"></i>Like
             </a>
             <a href="speaker-detail.php?speakerid=${response.data[i].id}" class="c-btn c-btn--pink py-2 mb-3 w-auto px-4 text-center flex-grow-1">
@@ -54,10 +54,13 @@ const getSpeakers = function (response) {
         </div>
       </div>`;
 
-    // Add like
-    // document.querySelectorAll(".js-like").addEventListener("click", function () {
-    //   handleData(`http://api.laprudence.be/project2/v2/sprekers/${response.id}/love`,);
-    // })
+    //Add like
+    let arrLikeBtn = document.querySelectorAll(".js-addlike");
+    for (let btn of arrLikeBtn) {
+      btn.addEventListener("click", function () {
+        handleData(`https://api.laprudence.be/project2/v2/sprekers/${btn.dataset.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+      })
+    };
   };
 }
 
@@ -71,5 +74,5 @@ function truncateText(zin, maxLength) {
 
 document.addEventListener('DOMContentLoaded', function () {
   console.info('DOM geladen');
-  handleData("http://api.laprudence.be/project2/v2/sprekers", getSpeakers)
+  handleData("https://api.laprudence.be/project2/v2/sprekers", getSpeakers)
 });
