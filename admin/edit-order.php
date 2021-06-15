@@ -48,19 +48,10 @@ if (isset($_GET["action"])) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto ">
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a class="active" href="../index.php">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../schedule.php">Program</a>
-                        </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../speakers.php">Speakers</a>
-                        </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../partners.php">Partners</a>
-                        </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="../contact.php">Contact</a>
+                            <a href="orders.php" class="active">Orders</a>
                         </li>
                     </ul>
                     <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>

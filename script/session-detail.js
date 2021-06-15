@@ -59,9 +59,14 @@ const sessionDetails = function (response) {
   document.querySelector(".js-img").src = `img/${image}`
 
   document.querySelector(".js-addlike").addEventListener("click", function () {
-    handleData(`https://api.laprudence.be/project2/v2/talks/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+    handleData(`https://api.laprudence.be/project2/v2/talks/${response.id}/love`, updateLike, "PATCH", `{"extra_love":1}`)
   })
 };
+
+
+let updateLike = function (response) {
+  document.querySelector(".js-likes").innerHTML = `${response.love_teller} likes`;
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   console.info('DOM geladen');

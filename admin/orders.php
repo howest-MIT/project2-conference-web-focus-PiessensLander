@@ -39,7 +39,7 @@ $orders = TicketsRepository::getAllOrders();
                             <a href="index.php">Home</a>
                         </li>
                         <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="orders.php">Orders</a>
+                            <a href="orders.php" class="active">Orders</a>
                         </li>
                     </ul>
                     <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>

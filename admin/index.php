@@ -62,7 +62,7 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
         </div>
         <div class="row mb-5">
             <div class="col-sm-6 col-lg-3">
-                <div class="c-stat d-flex p-3 justify-content-between align-items-center">
+                <div class="c-stat d-flex p-3 justify-content-between align-items-center mb-3 mb-lg-0">
                     <div class="d-flex align-items-center">
                         <i class="fas fa-euro-sign c-stat__icon d-flex align-items-center justify-content-center me-4"></i>
                         <div class="c-stat__detail">
@@ -133,7 +133,7 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
                         <?php } ?>
                     </tbody>
                 </table>
-                <div class="c-table__all d-flex justify-content-center">
+                <div class="c-table__all d-flex justify-content-center mb-5 mb-lg-0">
                     <a href="orders.php" class="c-btn c-btn--pink py-2 px-5 w-auto">View all orders</a>
                 </div>
             </div>

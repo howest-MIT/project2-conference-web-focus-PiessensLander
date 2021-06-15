@@ -15,6 +15,7 @@ let getSpeakerId = function () {
   }
 };
 
+
 const speakerDetails = function (response) {
   let fname = "";
   let lname = "";
@@ -61,7 +62,7 @@ const speakerDetails = function (response) {
   }
 
   document.querySelector(".js-addlike").addEventListener("click", function () {
-    handleData(`https://api.laprudence.be/project2/v2/sprekers/${response.id}/love`, location.reload(), "PATCH", `{"extra_love":1}`)
+    handleData(`https://api.laprudence.be/project2/v2/sprekers/${response.id}/love`, updateLike, "PATCH", `{"extra_love":1}`)
   })
 
   for (let talk of response.talks) {
@@ -78,6 +79,10 @@ const speakerDetails = function (response) {
     </div>`
   }
 };
+
+let updateLike = function (response) {
+  document.querySelector(".js-likes").innerHTML = `${response.love_teller} likes`;
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   console.info('DOM geladen');
