@@ -40,21 +40,24 @@ if (isset($_GET["action"])) {
         <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
             <div class="container-fluid m-0 p-0">
                 <a class="navbar-brand w-auto c-nav__logo" href="#">
-                    <img src="../img/logo_fw.png" alt="Logo" class="w-100">
+                    <img src="img/logo_fw.png" alt="Logo" class="w-100">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto ">
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                    <ul class="navbar-nav mx-auto d-flex align-items-center">
+                        <li class="c-nav__link py-sm-2 px-3 mb-3 mb-lg-0">
                             <a href="index.php">Home</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a href="orders.php" class="active">Orders</a>
+                        <li class="c-nav__link py-sm-2 px-3 mb-3 mb-lg-0">
+                            <a class="active" href="orders.php">Orders</a>
                         </li>
                     </ul>
-                    <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
+                    <div class="d-flex justify-content-center">
+                        <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+                    </div>
+
                 </div>
             </div>
         </nav>
@@ -162,7 +165,7 @@ if (isset($_GET["action"])) {
             </div>
         </form>
     </div>
-    <footer>
+    <footer class="mt-5">
         <div class="container">
             <div class="row">
                 <p class="text-center text-white">&copy; Multi-Mania, 2021</p>

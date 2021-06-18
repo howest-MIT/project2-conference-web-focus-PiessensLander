@@ -30,30 +30,33 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto ">
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                    <ul class="navbar-nav mx-auto d-flex align-items-center">
+                        <li class="c-nav__link py-sm-2 px-3 mb-3 mb-lg-0">
                             <a href="index.php">Home</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
-                            <a class="active" href="schedule.php">Program</a>
+                        <li class="c-nav__link py-sm-2 px-3 mb-3 mb-lg-0">
+                            <a class="active " href="schedule.php">Program</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link py-sm-2 px-3 mb-3 mb-lg-0">
                             <a href="speakers.php">Speakers</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link py-sm-2 px-3 mb-3 mb-lg-0">
                             <a href="partners.php">Partners</a>
                         </li>
-                        <li class="c-nav__link px-3 mb-3 mb-lg-0">
+                        <li class="c-nav__link py-sm-2 px-3 mb-3 mb-lg-0">
                             <a href="contact.php">Contact</a>
                         </li>
                     </ul>
-                    <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+                    <div class="d-flex justify-content-center">
+                        <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+                    </div>
+
                 </div>
             </div>
         </nav>
         <div class="row">
             <div class="c-title c-title--white p-4 mb-5 d-flex flex-row align-items-center justify-content-between">
-                <h2>All talks</h2>
+                <h2>Program</h2>
             </div>
         </div>
         <div class="js-schedule">
