@@ -6,9 +6,8 @@ require_once dirname(__FILE__) . "../../src/repository/ticketsrepository.php";
 
 if (isset($_POST["submit"])) {
     $rows = TicketsRepository::updateOrder($_POST["fullname"], $_POST["email"], $_POST["phone"], $_POST["amount-earlybird"], $_POST["amount-student"], $_POST["amount-group"], $_POST["id"]);
-    $id = $_POST["id"];
     if ($rows > 0) {
-        header(`location:index.php`);
+        header("location:index.php");
     } else {
         echo "No records were updated.";
     }

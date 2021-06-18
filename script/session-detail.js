@@ -1,46 +1,46 @@
-'use strict'
+'use strict';
 
 const getSessionId = function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const sessionId = urlParams.get('sessionid');
+	const urlParams = new URLSearchParams(window.location.search);
+	const sessionId = urlParams.get('sessionid');
 
-  if (sessionId) {
-    handleData(`https://api.laprudence.be/project2/v2/talks/${sessionId}`, sessionDetails);
-  } else {
-    console.log('De querystring ontbreekt');
-  }
+	if (sessionId) {
+		handleData(`https://api.laprudence.be/project2/v2/talks/${sessionId}`, sessionDetails);
+	} else {
+		console.log('De querystring ontbreekt');
+	}
 };
 
 const sessionDetails = function (response) {
-  let fname = "";
-  let lname = "";
-  let name = "";
-  let image = "";
+	let fname = '';
+	let lname = '';
+	let name = '';
+	let image = '';
 
-  if (response.spreker.voornaam && response.spreker.voornaam != null) {
-    fname = response.spreker.voornaam
-  } else {
-    fname = "";
-  }
+	if (response.spreker.voornaam && response.spreker.voornaam != null) {
+		fname = response.spreker.voornaam;
+	} else {
+		fname = '';
+	}
 
-  if (response.spreker.familienaam && response.spreker.familienaam != null) {
-    lname = response.spreker.familienaam
-  } else {
-    lname = "";
-  }
+	if (response.spreker.familienaam && response.spreker.familienaam != null) {
+		lname = response.spreker.familienaam;
+	} else {
+		lname = '';
+	}
 
-  if (response.afbeelding && response.afbeelding != null) {
-    image = response.afbeelding
-  } else {
-    image = "img_placeholder.jpg"
-  }
+	if (response.afbeelding && response.afbeelding != null) {
+		image = response.afbeelding;
+	} else {
+		image = 'img_placeholder.jpg';
+	}
 
-  name = fname + " " + lname;
-  document.querySelector(".js-session-title").innerHTML = `
+	name = fname + ' ' + lname;
+	document.querySelector('.js-session-title').innerHTML = `
     <div>Let's talk about...</div>
     <h1 class="text-pink">${response.titel}</h1>
-    <h3><a class="text-dark" href="speaker-detail.php?speakerid=${response.spreker.id}">${name}</a></h3>`
-  document.querySelector(".js-session-desc").innerHTML = `
+    <h3><a class="text-dark" href="speaker-detail.php?speakerid=${response.spreker.id}">${name}</a></h3>`;
+	document.querySelector('.js-session-desc').innerHTML = `
     <h3 class="text-pink mb-4">${response.zaal.omschrijving} - ${response.start}h</h3>
     <p class="mb-4 c-session__desc">${response.omschrijving.eng}</p>
     <div class="c-speaker__like d-flex align-items-center mb-4">
@@ -51,24 +51,23 @@ const sessionDetails = function (response) {
           </div>
     <div class="c-session__share">
       <p class="mb-2">Share on</p>
-      <div class="c-share__buttons d-flex">
-        <a href="#" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3">Facebook</a>
+      <div class="c-share__buttons d-flex flex-wrap">
+        <a href="#" class="c-btn c-btn--facebook py-2 px-5 w-auto me-3 mb-3 mb-md-0">Facebook</a>
         <a href="https://twitter.com/intent/tweet?text=${response.titel}%20on%20Multi-Mania!" target="_blank" class="c-btn c-btn--twitter py-2 px-5 w-auto">Twitter</a>
       </div>
     </div>`;
-  document.querySelector(".js-img").src = `img/${image}`
+	document.querySelector('.js-img').src = `img/${image}`;
 
-  document.querySelector(".js-addlike").addEventListener("click", function () {
-    handleData(`https://api.laprudence.be/project2/v2/talks/${response.id}/love`, updateLike, "PATCH", `{"extra_love":1}`)
-  })
+	document.querySelector('.js-addlike').addEventListener('click', function () {
+		handleData(`https://api.laprudence.be/project2/v2/talks/${response.id}/love`, updateLike, 'PATCH', `{"extra_love":1}`);
+	});
 };
 
-
 let updateLike = function (response) {
-  document.querySelector(".js-likes").innerHTML = `${response.love_teller} likes`;
-}
+	document.querySelector('.js-likes').innerHTML = `${response.love_teller} likes`;
+};
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.info('DOM geladen');
-  getSessionId();
+	console.info('DOM geladen');
+	getSessionId();
 });

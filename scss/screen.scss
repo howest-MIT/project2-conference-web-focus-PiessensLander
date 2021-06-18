@@ -239,6 +239,12 @@ footer {
 		display: block;
 		width: auto;
 	}
+	.navbar-toggler {
+		border: none;
+		&:active {
+			outline: none;
+		}
+	}
 }
 
 .c-header {
@@ -391,6 +397,11 @@ footer {
 	&__speakers {
 		a {
 			color: black;
+			transition: 0.3s all;
+			&:hover {
+				color: $darkPink;
+				transition: 0.3s all;
+			}
 		}
 	}
 	@include lg {
