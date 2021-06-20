@@ -3,7 +3,7 @@
 <?php include "src/helper/header.php" ?>
 
 <body>
-    <div class="bg" style="height: 15vh"></div>
+    <div class="bg" style="height: 25vh"></div>
 
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">

@@ -28,7 +28,7 @@ $orders = TicketsRepository::getAllOrders();
         <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
             <div class="container-fluid m-0 p-0">
                 <a class="navbar-brand w-auto c-nav__logo" href="#">
-                    <img src="img/logo_fw.png" alt="Logo" class="w-100">
+                    <img src="../img/logo_fw.png" alt="Logo" class="w-100">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@ $orders = TicketsRepository::getAllOrders();
                         </li>
                     </ul>
                     <div class="d-flex justify-content-center">
-                        <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+                        <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
                     </div>
 
                 </div>
