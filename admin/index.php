@@ -36,7 +36,7 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
         <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
             <div class="container-fluid m-0 p-0">
                 <a class="navbar-brand w-auto c-nav__logo" href="#">
-                    <img src="img/logo_fw.png" alt="Logo" class="w-100">
+                    <img src="../img/logo_fw.png" alt="Logo" class="w-100">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

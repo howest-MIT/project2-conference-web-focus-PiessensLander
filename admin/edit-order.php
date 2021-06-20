@@ -40,7 +40,7 @@ if (isset($_GET["action"])) {
         <nav class="navbar navbar-expand-lg navbar-light c-nav py-4">
             <div class="container-fluid m-0 p-0">
                 <a class="navbar-brand w-auto c-nav__logo" href="#">
-                    <img src="img/logo_fw.png" alt="Logo" class="w-100">
+                    <img src="../img/logo_fw.png" alt="Logo" class="w-100">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -91,7 +91,7 @@ if (isset($_GET["action"])) {
                 <div class="col-sm-12 col-lg-4 mb-sm-3 mb-0">
                     <div class="c-booking__input d-flex flex-column mb-4">
                         <label for="fullname" class="mb-2">Order ID</label>
-                        <input type="text" name="id" class="c-booking__input--text" placeholder="ID" required readonly value="<?php echo $order[0]->orderID ?>" />
+                        <input type="text" name="id" class="c-booking__input--text" placeholder="ID" required readonly value="<?php echo $order[0]->orderID ?>" disabled />
                     </div>
                     <div class="c-booking__input d-flex flex-column mb-4">
                         <label for="fullname" class="mb-2">Full name</label>
