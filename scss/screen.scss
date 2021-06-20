@@ -560,6 +560,15 @@ footer {
 				border: 2px solid $lightPink;
 				transition: all 0.3s;
 			}
+			&:read-only {
+				opacity: 0.5;
+				&:hover {
+					cursor: not-allowed;
+				}
+				&:focus {
+					border: 1px solid $lightGray;
+				}
+			}
 		}
 		&:invalid {
 			border: 2px solid red;

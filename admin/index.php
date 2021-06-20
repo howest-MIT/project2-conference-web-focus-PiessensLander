@@ -51,7 +51,7 @@ $total_sales = ($aantal_earlybird->aantal * 99) + ($aantal_student->aantal * 45)
                         </li>
                     </ul>
                     <div class="d-flex justify-content-center">
-                        <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+                        <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
                     </div>
 
                 </div>

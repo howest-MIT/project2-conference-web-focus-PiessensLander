@@ -12,7 +12,7 @@ if (isset($_GET["orderid"])) {
 if (isset($_GET["action"])) {
     if ($_GET["action"] == "delete") {
         TicketsRepository::deleteOrder($_GET["orderid"]);
-        header("location:index.php");
+        header("location:orders.php");
     }
 }
 
@@ -55,7 +55,7 @@ if (isset($_GET["action"])) {
                         </li>
                     </ul>
                     <div class="d-flex justify-content-center">
-                        <a href="bestel.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Buy tickets</a>
+                        <a href="logout.php" class="c-nav__cta c-btn c-btn--outline py-2 px-5 text-center">Log out</a>
                     </div>
 
                 </div>
@@ -91,7 +91,7 @@ if (isset($_GET["action"])) {
                 <div class="col-sm-12 col-lg-4 mb-sm-3 mb-0">
                     <div class="c-booking__input d-flex flex-column mb-4">
                         <label for="fullname" class="mb-2">Order ID</label>
-                        <input type="text" name="id" class="c-booking__input--text" placeholder="ID" required readonly value="<?php echo $order[0]->orderID ?>" disabled />
+                        <input type="text" name="id" class="c-booking__input--text" placeholder="ID" required readonly value="<?php echo $order[0]->orderID ?>" />
                     </div>
                     <div class="c-booking__input d-flex flex-column mb-4">
                         <label for="fullname" class="mb-2">Full name</label>
